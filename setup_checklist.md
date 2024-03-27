@@ -1,0 +1,13 @@
+- [ ] Git setup
+- [ ] Node version manager setup
+- [ ] Node Js project setup
+- [ ] TypeScript setup
+- [ ] Prettier setup
+- [ ] EsLint setup
+- [ ] Git hooks setup
+- [ ] Application config setup
+- [ ] ExpressJs App Setup
+- [ ] Logger setup
+- [ ] Error handling setup
+- [ ] Tests setup
+- [ ] Create template
