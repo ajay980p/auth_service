@@ -1,5 +1,5 @@
-- [ ] Git setup
-- [ ] Node version manager setup
+- [x] Git setup
+- [x] Node version manager setup
 - [ ] Node Js project setup
 - [ ] TypeScript setup
 - [ ] Prettier setup
