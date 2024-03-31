@@ -1,7 +1,8 @@
+
 - [x] Git setup
 - [x] Node version manager setup
-- [ ] Node Js project setup
-- [ ] TypeScript setup
+- [x] Node Js project setup
+- [x] TypeScript setup
 - [ ] Prettier setup
 - [ ] EsLint setup
 - [ ] Git hooks setup

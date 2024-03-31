@@ -1,0 +1,19 @@
+{
+    "name": "auth_service",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "format:check": "prettier . --check",
+        "format:fix": "prettier . --write",
+        "dev": "node src/server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^20.12.2",
+        "prettier": "3.2.5",
+        "typescript": "^5.4.3"
+    }
+}
