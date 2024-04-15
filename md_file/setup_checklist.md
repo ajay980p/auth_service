@@ -3,12 +3,12 @@
 - [x] Node version manager setup
 - [x] Node Js project setup
 - [x] TypeScript setup
-- [ ] Prettier setup
+- [x] Prettier setup
 - [ ] EsLint setup
 - [ ] Git hooks setup
 - [ ] Application config setup
-- [ ] ExpressJs App Setup
+- [x] ExpressJs App Setup
 - [ ] Logger setup
 - [ ] Error handling setup
 - [ ] Tests setup
-- [ ] Create template
+- [x] Create template

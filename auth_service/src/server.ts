@@ -1,5 +1,15 @@
-function login(username: string): boolean {
-    return true
-}
+// Import required modules
+import express, { Request, Response } from 'express';
+import { Config } from './config';
+import app from './app';
 
-login("admin")
+// Create Express app
+const server = express();
+
+// Use the app middleware
+server.use(app);
+
+// Start the server
+server.listen(Config.PORT, () => {
+    console.log(`Server is running on port ${Config.PORT}`);
+});
