@@ -1,4 +1,5 @@
 import express, { NextFunction, Request, Response } from 'express';
+import logger from "./config/logger";
 
 // Create Express app
 const app = express();
@@ -8,18 +9,17 @@ app.get('/', (req: Request, res: Response) => {
     res.send('Hello World!');
 });
 
-
+// Define error handling middleware
 app.use((err: unknown, req: Request, res: Response, next: NextFunction) => {
-    logger.error(err.message)
 
-    const statusCode = err.statusCode || 500;
+    try {
+        throw new Error("Something went wrong");
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            logger.error("Error log : ", error.message);
+        }
+    }
+});
 
-    res.status(statusCode).json({
-        status: 'error',
-        statusCode,
-        message: err.message,
-    });
-
-})
-
+// Export the Express app
 export default app;

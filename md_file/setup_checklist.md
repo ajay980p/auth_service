@@ -1,14 +1,14 @@
 
-- [x] Git setup
-- [x] Node version manager setup
-- [x] Node Js project setup
-- [x] TypeScript setup
-- [x] Prettier setup
-- [ ] EsLint setup
-- [ ] Git hooks setup
-- [ ] Application config setup
-- [x] ExpressJs App Setup
-- [ ] Logger setup
-- [ ] Error handling setup
-- [ ] Tests setup
-- [x] Create template
+- [x] Git setup.............................Git
+- [x] Node version manager setup............
+- [x] Node Js project setup.................
+- [x] TypeScript setup......................
+- [x] Prettier setup........................Prettier
+- [ ] EsLint setup..........................EsLint (npm i lint-staged......Run lint only on staged file or other configurations like prettier)
+- [x] Git hooks setup.......................husky (to run the script before git commit)
+- [x] Application config setup..............(like env or other setup)
+- [x] ExpressJs App Setup...................
+- [ ] Logger setup..........................Winston
+- [ ] Error handling setup..................
+- [ ] Tests setup...........................
+- [x] Create template.......................
