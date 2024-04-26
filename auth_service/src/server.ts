@@ -1,8 +1,8 @@
 // Import required modules
-import express, { Request, Response } from 'express';
-import { Config } from './config';
-import app from './app';
-import logger from './config/logger';
+import express, { Request, Response } from "express";
+import { Config } from "./config";
+import app from "./app";
+import logger from "./config/logger";
 
 // Create Express app
 const server = express();
