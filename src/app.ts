@@ -7,6 +7,9 @@ import "reflect-metadata";
 // Create Express app
 const app = express();
 
+// Middlewares
+app.use(express.json());
+
 // Define routes
 app.get("/", (req: Request, res: Response) => {
     return res.send("Welcome to auth service");
@@ -18,7 +21,7 @@ app.use("/auth", authRouter);
 app.use((err: HttpError, req: Request, res: Response, next: NextFunction) => {
     logger.error("Error log : ", err.message);
 
-    const statusCode = err.statusCodev || 500;
+    const statusCode = err.statusCode || 500;
 
     return res.status(statusCode).send({
         errors: [
