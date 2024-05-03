@@ -4,11 +4,20 @@
         "module": "commonjs",
         "outDir": "./dist",
         "strict": true,
+        "strictPropertyInitialization": false,
         "esModuleInterop": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "lib": ["ES6"]
+        "lib": [
+            "ES6",
+            "DOM"
+        ]
     },
-    "include": ["src/**/*.ts", "eslint.config.js"],
-    "exclude": ["node_modules"]
+    "include": [
+        "src/**/*.ts",
+        "eslint.config.js"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }

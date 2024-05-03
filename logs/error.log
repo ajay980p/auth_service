@@ -1,0 +1,1 @@
+{"level":"error","message":"Error starting server: listen EADDRINUSE: address already in use :::4001","service":"auth_service","timestamp":"2024-05-03T10:31:40.683Z"}
