@@ -33,6 +33,7 @@
     },
     "dependencies": {
         "@types/bcrypt": "^5.0.2",
+        "@types/body-parser": "^1.19.5",
         "@types/http-errors": "^2.0.4",
         "@types/supertest": "^6.0.2",
         "bcrypt": "^5.1.1",
