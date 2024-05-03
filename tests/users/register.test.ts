@@ -6,7 +6,6 @@ import { truncateTables } from "../utils";
 import { User } from "../../src/entity/User";
 
 describe("POST /auth/register", () => {
-
     let connection: DataSource;
 
     // To create the connection before all the tests
@@ -25,9 +24,7 @@ describe("POST /auth/register", () => {
     });
 
     describe("Given all the fields", () => {
-
         it("Should persist the user into the database", async () => {
-
             // Arrange
             const userData = {
                 firstName: "John",
@@ -47,9 +44,7 @@ describe("POST /auth/register", () => {
             } catch (err) {
                 console.log(err);
             }
-
         });
-
 
         it("Should hashed the password in database", async () => {
             // Arrange
@@ -87,9 +82,5 @@ describe("POST /auth/register", () => {
         //     expect(response.statusCode).toBe(400);
         //     // expect(users[0].email).toMatch(/^\$2b\$\d+\$/);
         // });
-
-
-
     });
-
 });
