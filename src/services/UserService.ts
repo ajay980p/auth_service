@@ -15,6 +15,7 @@ export class UserService {
         this.logger = logger;
     }
 
+    // To Register User
     async createUser({ firstName, lastName, email, password }: UserData) {
         const user = await this.userRepository.findOne({ where: { email: email } });
 
@@ -33,6 +34,40 @@ export class UserService {
         } catch (err) {
             this.logger.error("Error while creating user : ");
             throw err;
+        }
+    }
+
+    // To Login User
+    async loginUser({ email, password }: { email: string; password: string }) {
+        const user = await this.userRepository.findOne({ where: { email: email } });
+
+        if (!user) {
+            const err = createHttpError(400, "Email doesn't exists");
+            throw err;
+        }
+
+        try {
+            const salt = await bcrypt.genSalt(saltRounds);
+            const hashPassword = await bcrypt.hash(password, salt);
+
+            const user = await this.userRepository.save({ email, password: hashPassword });
+            this.logger.info("User Login successfully", { id: user.id });
+            return user;
+        } catch (err) {
+            this.logger.error("Error while User Login : ");
+            throw err;
+        }
+    }
+
+    // Check Email Exists into the Database or not
+    async findByEmail(email: string) {
+        const user = await this.userRepository.findOne({ where: { email: email } });
+
+        if (!user) {
+            const err = createHttpError(400, "Email doesn't exists");
+            throw err;
+        } else {
+            return user;
         }
     }
 }

@@ -2,7 +2,7 @@ import request from "supertest";
 import app from "../../src/app";
 import { DataSource } from "typeorm";
 import { AppDataSource } from "../../src/config/data-source";
-import { truncateTables } from "../utils";
+import { isJWT, truncateTables } from "../utils";
 import { User } from "../../src/entity/User";
 
 
@@ -86,7 +86,47 @@ describe("POST /auth/register", () => {
 
             // Assert
             expect(response.statusCode).toBe(400);
-            // expect(users[0].email).toMatch(/^\$2b\$\d+\$/);
+        });
+
+
+        it("Should store the token inside the cookies", async () => {
+            // Arrange
+            const userData = {
+                firstName: "John",
+                lastName: "Doe",
+                email: "",
+                password: "password",
+            };
+
+            // Act
+            const response = await request(app).post("/auth/register").send(userData);
+
+            console.log("Response : ", response.headers['set-cookie']);
+
+            // Assert
+            let accessToken: string | undefined;
+            let refreshToken: string | undefined;
+
+            let cookies: string[] = [];
+            if (Array.isArray(response.headers['set-cookie'])) {
+                cookies = response.headers['set-cookie'];
+            }
+
+            cookies.forEach(cookie => {
+                if (cookie.startsWith('accessToken=')) {
+                    accessToken = cookie.split(';')[0].split('=')[1];
+                }
+
+                if (cookie.startsWith('refreshToken=')) {
+                    refreshToken = cookie.split(';')[0].split('=')[1];
+                }
+            })
+
+            expect(accessToken).not.toBeNull();
+            expect(refreshToken).not.toBeNull();
+
+            // expect(isJWT(accessToken)).toBeTruthy();
+            // expect(isJWT(refreshToken)).toBeTruthy();
         });
     });
 

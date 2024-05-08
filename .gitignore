@@ -11,3 +11,6 @@ temp/
 
 .env.dev
 
+./logs
+
+certs/
