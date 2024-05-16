@@ -545,3 +545,432 @@
 {"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-05T07:12:28.939Z"}
 {"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-05T07:12:28.958Z"}
 {"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-05T07:12:28.975Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:17.445Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:17.631Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:17.647Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:17.660Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:17.687Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:17.711Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:17.724Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:45.449Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:45.630Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:45.645Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:45.658Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:45.684Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:45.705Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:56:45.718Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:15.063Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:15.248Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:15.263Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:15.275Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:15.302Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:15.324Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:15.337Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:42.871Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:43.057Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:43.072Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:43.083Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:43.109Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:43.130Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T01:57:43.142Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:18.138Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:18.340Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:18.361Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:18.377Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:18.597Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:18.627Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:18.647Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:54.272Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:54.477Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:54.497Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:54.512Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:54.716Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:54.745Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:30:54.762Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:31:12.212Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:31:12.416Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:31:12.434Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:31:12.449Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:31:12.654Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:31:12.683Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:31:12.700Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:32:24.424Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:32:24.624Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:32:24.644Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:32:24.661Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:32:24.863Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:32:24.890Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:32:24.906Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:26.356Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:26.572Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:26.593Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:26.613Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:26.812Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:26.837Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:26.854Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:54.937Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:55.144Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:55.165Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:55.181Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:55.401Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:55.427Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:33:55.445Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:34:10.507Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:34:10.711Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:34:10.734Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:34:10.751Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:34:10.960Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:34:10.987Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:34:11.005Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:36:55.299Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:36:55.494Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:36:55.514Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:36:55.531Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:36:55.724Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:36:55.751Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:36:55.768Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:37:05.616Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:37:05.812Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:37:05.833Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:37:05.848Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:37:06.052Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:37:06.080Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:37:06.097Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:41:30.308Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:41:30.318Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:41:30.324Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:41:30.594Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:41:30.600Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:41:51.709Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:41:51.786Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:41:51.797Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:41:51.803Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:41:51.866Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:41:51.877Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:41:51.884Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:01.346Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:01.424Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:01.432Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:01.438Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:01.494Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:01.503Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:01.509Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:36.735Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:36.811Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:36.821Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:36.826Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:36.882Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:36.893Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:36.899Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:52.406Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:52.543Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:52.553Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:52.559Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:58.326Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:43:58.452Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:44:21.743Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:44:21.861Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:45:46.780Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:45:46.857Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:45:46.867Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:45:46.873Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:45:46.937Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:45:46.947Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:45:46.953Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:22.030Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:22.105Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:22.115Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:22.122Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:22.185Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:22.196Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:22.202Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:58.517Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:58.593Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:58.602Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:58.608Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:58.663Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:46:58.672Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:47:19.244Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:47:19.321Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:47:19.331Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:47:19.337Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:47:19.402Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:47:30.185Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:47:30.261Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:47:30.272Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:47:30.278Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:47:30.342Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:48:04.342Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:48:04.420Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:48:04.429Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:48:04.435Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:48:04.498Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:48:24.891Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:48:24.968Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:48:24.976Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:48:24.981Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:48:25.037Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:50:27.274Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:50:27.351Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:50:27.361Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:50:27.367Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:50:27.430Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:51:33.670Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:51:33.747Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:51:33.757Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:51:33.763Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:51:33.827Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:51:51.699Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:51:51.776Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:51:51.785Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:51:51.791Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:51:51.846Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:52:03.448Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:52:03.525Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:52:03.535Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:52:03.543Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:52:03.605Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:52:09.339Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:52:09.415Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:52:09.425Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:52:09.431Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:52:09.486Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:53:47.261Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:53:47.271Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:53:47.277Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:53:47.350Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:54:02.524Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:54:02.589Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:54:02.598Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:54:02.604Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:54:02.679Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:54:54.469Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:54:54.536Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:54:54.545Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:54:54.551Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:54:54.617Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:55:25.338Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:55:25.404Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:55:25.414Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:55:25.421Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-08T17:55:25.494Z"}
+{"level":"error","message":"Error starting server: listen EACCES: permission denied 0.0.0.0:4001","service":"auth_service","timestamp":"2024-05-09T13:33:37.463Z"}
+{"level":"error","message":"Error starting server: listen EACCES: permission denied 0.0.0.0:4001","service":"auth_service","timestamp":"2024-05-09T13:35:07.336Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T13:39:44.426Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:40:26.788Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:40:26.845Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:40:26.857Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:40:26.887Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:40:26.976Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:40:43.637Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:40:43.704Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:40:43.713Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:40:43.719Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:40:43.794Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:42:42.391Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:42:42.449Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:42:42.456Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:42:42.460Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:42:42.519Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T13:43:49.948Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T13:43:50.705Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:44:56.317Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:44:56.385Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:44:56.393Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:44:56.455Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:45:04.517Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:45:04.574Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:45:04.634Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:45:09.717Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:45:09.774Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T13:45:55.144Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T13:46:46.773Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T13:48:42.850Z"}
+{"level":"error","message":"Error: No metadata for \"User\" was found.","service":"auth_service","timestamp":"2024-05-09T13:49:04.603Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:49:06.281Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:49:06.338Z"}
+{"level":"error","message":"Error: data and hash arguments required","service":"auth_service","timestamp":"2024-05-09T13:49:10.994Z"}
+{"level":"error","message":"Error: data and hash arguments required","service":"auth_service","timestamp":"2024-05-09T13:49:31.987Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:50:00.269Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:50:00.336Z"}
+{"level":"error","message":"Error: data and hash arguments required","service":"auth_service","timestamp":"2024-05-09T13:50:20.212Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:50:21.487Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:50:21.545Z"}
+{"level":"error","message":"Error: data and hash arguments required","service":"auth_service","timestamp":"2024-05-09T13:51:33.892Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:51:34.925Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:51:34.983Z"}
+{"level":"error","message":"Error: data and hash arguments required","service":"auth_service","timestamp":"2024-05-09T13:53:22.297Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:53:22.893Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:53:22.951Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:55:11.089Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T13:55:11.147Z"}
+{"level":"error","message":"Error: data and hash arguments required","service":"auth_service","timestamp":"2024-05-09T13:55:11.718Z"}
+{"level":"error","message":"Error: data and hash arguments required","service":"auth_service","timestamp":"2024-05-09T13:56:51.206Z"}
+{"level":"error","message":"Error: data and hash arguments required","service":"auth_service","timestamp":"2024-05-09T13:58:35.063Z"}
+{"level":"error","message":"Error: data and hash arguments required","service":"auth_service","timestamp":"2024-05-09T13:59:09.583Z"}
+{"level":"error","message":"Error: data and hash arguments required","service":"auth_service","timestamp":"2024-05-09T13:59:52.696Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:00:08.232Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:00:08.289Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-09T14:00:40.072Z"}
+{"level":"error","message":"Error: null value in column \"firstName\" of relation \"user\" violates not-null constraint","service":"auth_service","timestamp":"2024-05-09T14:00:40.073Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:01:15.101Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:01:15.167Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:01:31.100Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:01:31.157Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-09T14:01:31.871Z"}
+{"level":"error","message":"Error: null value in column \"firstName\" of relation \"user\" violates not-null constraint","service":"auth_service","timestamp":"2024-05-09T14:01:31.872Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:02:30.058Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:02:30.116Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-09T14:02:31.050Z"}
+{"level":"error","message":"Error: null value in column \"firstName\" of relation \"user\" violates not-null constraint","service":"auth_service","timestamp":"2024-05-09T14:02:31.051Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-09T14:03:14.166Z"}
+{"level":"error","message":"Error: null value in column \"firstName\" of relation \"user\" violates not-null constraint","service":"auth_service","timestamp":"2024-05-09T14:03:14.166Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:03:36.257Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:03:36.313Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:04:25.805Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:04:25.872Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:04:56.684Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T14:04:56.741Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T15:48:45.697Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:49:20.848Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:49:20.914Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:49:27.227Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:49:27.293Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T15:49:28.574Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:52:04.583Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:52:04.649Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:52:11.041Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:52:11.109Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:52:16.452Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:52:16.518Z"}
+{"level":"error","message":"Error starting server: listen EADDRINUSE: address already in use :::4001","service":"auth_service","timestamp":"2024-05-09T15:52:23.929Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:52:24.118Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:52:24.178Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T15:53:49.817Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:54:13.488Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:54:13.555Z"}
+{"level":"error","message":"Error starting server: listen EADDRINUSE: address already in use :::4001","service":"auth_service","timestamp":"2024-05-09T15:54:57.932Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:54:59.956Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:55:00.024Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:55:42.435Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:55:42.502Z"}
+{"level":"error","message":"Error starting server: listen EADDRINUSE: address already in use :::4001","service":"auth_service","timestamp":"2024-05-09T15:55:49.956Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:56:05.685Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:56:05.752Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:56:26.635Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:56:26.701Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:56:34.843Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:56:34.911Z"}
+{"level":"error","message":"Error starting server: listen EADDRINUSE: address already in use :::4001","service":"auth_service","timestamp":"2024-05-09T15:56:52.602Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:57:31.242Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T15:57:31.309Z"}
+{"level":"error","message":"Error starting server: listen EADDRINUSE: address already in use :::4001","service":"auth_service","timestamp":"2024-05-09T15:57:36.674Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T15:57:45.271Z"}
+{"level":"error","message":"Error starting server: listen EADDRINUSE: address already in use :::4001","service":"auth_service","timestamp":"2024-05-09T16:00:07.454Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T16:00:13.854Z"}
+{"level":"error","message":"Error starting server: listen EADDRINUSE: address already in use :::4001","service":"auth_service","timestamp":"2024-05-09T16:00:51.647Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T16:00:53.261Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T16:01:42.561Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T16:03:55.197Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-09T16:15:06.450Z"}
+{"level":"error","message":"Error: Invalid Password","service":"auth_service","timestamp":"2024-05-09T16:15:06.452Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-09T16:16:01.805Z"}
+{"level":"error","message":"Error: Invalid Password","service":"auth_service","timestamp":"2024-05-09T16:16:01.807Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-09T16:18:08.139Z"}
+{"level":"error","message":"Error: Invalid Password","service":"auth_service","timestamp":"2024-05-09T16:18:08.142Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-09T16:18:23.519Z"}
+{"level":"error","message":"Error: Invalid Password","service":"auth_service","timestamp":"2024-05-09T16:18:23.520Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-09T16:20:31.315Z"}
+{"level":"error","message":"Error: Invalid Password","service":"auth_service","timestamp":"2024-05-09T16:20:31.320Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-09T16:26:22.678Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-05-09T16:26:22.681Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T16:26:51.837Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T16:26:51.895Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T16:27:26.318Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-09T16:27:26.384Z"}
+{"level":"error","message":"Error: relation \"user\" does not exist","service":"auth_service","timestamp":"2024-05-09T16:28:30.791Z"}
+{"level":"error","message":"Error: relation \"user\" does not exist","service":"auth_service","timestamp":"2024-05-09T16:29:16.900Z"}
+{"level":"error","message":"Error: relation \"user\" does not exist","service":"auth_service","timestamp":"2024-05-09T16:30:00.732Z"}
+{"level":"error","message":"Error: relation \"user\" does not exist","service":"auth_service","timestamp":"2024-05-09T16:34:01.609Z"}
+{"level":"error","message":"Error: relation \"user\" does not exist","service":"auth_service","timestamp":"2024-05-09T16:38:50.771Z"}
+{"level":"error","message":"Error: relation \"refresh_token\" does not exist","service":"auth_service","timestamp":"2024-05-09T16:39:33.171Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T16:40:27.938Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T16:44:52.598Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T16:48:37.132Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T16:49:21.520Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T16:51:00.210Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T16:52:14.848Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T16:55:50.611Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T16:57:03.121Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:05:01.841Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:06:47.849Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:07:42.173Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:17:46.251Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:18:36.214Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:23:47.487Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:25:31.640Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:26:08.299Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:28:55.471Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-09T17:30:04.268Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-05-09T17:30:04.269Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:30:32.139Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:31:51.646Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:32:46.211Z"}
+{"level":"error","message":"Error: Internal Server Error","service":"auth_service","timestamp":"2024-05-09T17:33:46.710Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:34:09.739Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:35:02.153Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:35:46.236Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:37:59.430Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:38:33.018Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:39:52.008Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:40:25.445Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:41:10.241Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:42:14.550Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:43:36.248Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:43:41.747Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:44:12.090Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:44:29.032Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:44:39.220Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:45:26.146Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:45:47.991Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T17:45:58.191Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T17:46:04.381Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T17:46:20.712Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T17:46:34.171Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T17:46:44.882Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:47:20.387Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:47:48.164Z"}
+{"level":"error","message":"Error while creating user : ","service":"auth_service","timestamp":"2024-05-09T17:48:14.195Z"}
+{"level":"error","message":"Error: duplicate key value violates unique constraint \"id\"","service":"auth_service","timestamp":"2024-05-09T17:48:14.195Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:48:34.885Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:48:50.688Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:49:04.159Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T17:50:40.464Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:50:47.085Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T17:58:32.693Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T18:01:16.288Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T18:01:36.400Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T18:02:47.090Z"}
+{"level":"error","message":"Error: Bad control character in string literal in JSON at position 86","service":"auth_service","timestamp":"2024-05-09T18:02:57.330Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T18:03:04.823Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T18:03:11.130Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T18:03:17.871Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-09T18:04:57.572Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T18:05:03.849Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-09T18:05:16.479Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-09T18:05:56.163Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-15T05:19:29.078Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-15T05:21:52.577Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-15T05:22:05.823Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-15T05:40:18.460Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-15T05:40:19.407Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-15T05:41:04.376Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-15T05:41:33.374Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-16T06:20:26.615Z"}
+{"level":"error","message":"Error starting server: listen EADDRINUSE: address already in use :::4001","service":"auth_service","timestamp":"2024-05-16T06:39:26.385Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-16T06:39:32.896Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-16T06:40:47.501Z"}
+{"level":"error","message":"Error starting server: listen EADDRINUSE: address already in use :::4001","service":"auth_service","timestamp":"2024-05-16T06:40:49.116Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-16T06:42:12.203Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-16T06:45:24.111Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-16T06:50:19.627Z"}

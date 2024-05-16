@@ -27,6 +27,7 @@ app.use((err: HttpError, req: Request, res: Response, next: NextFunction) => {
         errors: [
             {
                 type: err.name,
+                statusCode: statusCode,
                 message: err.message,
                 path: "",
                 location: "",

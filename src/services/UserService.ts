@@ -3,16 +3,19 @@ import { User } from "../entity/User";
 import { UserData } from "../types";
 import { Logger } from "winston";
 import bcrypt from "bcrypt";
-import createHttpError from "http-errors";
+import { CredentialService } from "./CredentialService";
+import { errorHandler } from "../validators/err-creators";
 const saltRounds = 10;
 
 export class UserService {
     private userRepository: Repository<User>;
     private logger: Logger;
+    private credentialService: CredentialService;
 
-    constructor(userRepository: Repository<User>, logger: Logger) {
+    constructor(userRepository: Repository<User>, credentialService: CredentialService, logger: Logger) {
         this.userRepository = userRepository;
         this.logger = logger;
+        this.credentialService = credentialService;
     }
 
     // To Register User
@@ -20,7 +23,7 @@ export class UserService {
         const user = await this.userRepository.findOne({ where: { email: email } });
 
         if (user) {
-            const err = createHttpError(400, "Email already exists");
+            const err = errorHandler(400, "Email already exists", email);
             throw err;
         }
 
@@ -39,19 +42,17 @@ export class UserService {
 
     // To Login User
     async loginUser({ email, password }: { email: string; password: string }) {
-        const user = await this.userRepository.findOne({ where: { email: email } });
-
-        if (!user) {
-            const err = createHttpError(400, "Email doesn't exists");
-            throw err;
-        }
+        const user = await this.findByEmail(email);
 
         try {
-            const salt = await bcrypt.genSalt(saltRounds);
-            const hashPassword = await bcrypt.hash(password, salt);
+            // To compare hashed password
+            const passwordMatched = await this.credentialService.comparePassword(password, user.password);
+            if (!passwordMatched) {
+                const err = errorHandler(400, "Email or Password doesn't exists", email);
+                throw err;
+            }
 
-            const user = await this.userRepository.save({ email, password: hashPassword });
-            this.logger.info("User Login successfully", { id: user.id });
+            this.logger.info("User Password matched successfully", { id: user.id });
             return user;
         } catch (err) {
             this.logger.error("Error while User Login : ");
@@ -64,7 +65,7 @@ export class UserService {
         const user = await this.userRepository.findOne({ where: { email: email } });
 
         if (!user) {
-            const err = createHttpError(400, "Email doesn't exists");
+            const err = errorHandler(400, "Email doesn't exists", email);
             throw err;
         } else {
             return user;

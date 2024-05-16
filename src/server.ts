@@ -3,9 +3,16 @@ import { Config } from "./config";
 import logger from "./config/logger";
 // import bodyParser from "body-parser";
 import AuthRoute from "./routes/auth";
+import cors from "cors";
 
 // Create Express app
 const app = express();
+
+// Adding Cors middleware
+app.use(cors({
+    origin: Config.CORS_ORIGIN,
+    credentials: true
+}))
 
 // Parse JSON request bodies
 app.use(express.urlencoded({ extended: true }));
@@ -17,9 +24,17 @@ app.use(express.json());
 app.use("/auth", AuthRoute);
 
 // Error handling middleware
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+    const statusCode = err.statusCode || 500;
+
     logger.error(`Error: ${err.message}`);
-    res.status(500).json({ error: "Internal server error" });
+
+    return res.send({
+        type: err.name,
+        statusCode: statusCode,
+        message: err.message,
+        errors: err.errors,
+    });
 });
 
 // Start the server

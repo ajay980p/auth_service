@@ -6,18 +6,23 @@ import { validationResult } from "express-validator";
 import { JwtPayload, sign } from "jsonwebtoken";
 import fs from "fs";
 import path from "path";
-import { Config } from "../config";
 import { CredentialService } from "../services/CredentialService";
+import { AppDataSource } from "../config/data-source";
+import { RefreshToken } from "../entity/RefreshToken";
+import { errorHandler } from "../validators/err-creators";
+import { TokenService } from "../services/TokenService";
 
 export class AuthController {
     private userService: UserService;
     private credentialService: CredentialService;
     private logger: Logger;
+    private tokenService: TokenService;
 
-    constructor(userService: UserService, credentialService: CredentialService, logger: Logger) {
+    constructor(userService: UserService, credentialService: CredentialService, tokenService: TokenService, logger: Logger) {
         this.userService = userService;
         this.credentialService = credentialService;
         this.logger = logger;
+        this.tokenService = tokenService;
     }
 
     async register(req: Request, res: Response, next: NextFunction) {
@@ -29,7 +34,6 @@ export class AuthController {
             return;
         }
 
-
         const { firstName, lastName, email, password } = req.body;
         this.logger.debug("Registering user : ", { firstName, lastName, email });
 
@@ -37,29 +41,13 @@ export class AuthController {
             const user = await this.userService.createUser({ firstName, lastName, email, password });
 
             // Generating Access Token
-            let privateKey: Buffer;
-            try {
-                privateKey = fs.readFileSync(path.join(__dirname, '../../certs/private.pem'));
-            } catch (err) {
-                const error = createHttpError(500, "Error while reading private key file.");
-                next(error);
-                return;
-            }
-
             const payLoad: JwtPayload = { userId: user.id };
-            const accessToken = sign(payLoad, privateKey, {
-                algorithm: "RS256",
-                expiresIn: "1h",
-                issuer: "auth-service",
-            });
+            const accessToken = await this.tokenService.generateAccessToken(payLoad);
 
+            // Persisting the refresh Token in the database
+            const newRefreshToken = await this.tokenService.persistRefreshToken(user);
             // Generating Refresh Token
-            const publicKey = fs.readFileSync(path.join(__dirname, '../../certs/public.pem'), "utf-8");
-            const refreshToken = sign(payLoad, 'secretKey', {
-                algorithm: "HS256",
-                expiresIn: "1y",
-                issuer: "auth-service",
-            });
+            const refreshToken = await this.tokenService.generateRefreshToken({ ...payLoad, id: String(newRefreshToken.id) });
 
             // Sending the tokens as cookies
             res.cookie("accessToken", accessToken, {
@@ -69,20 +57,20 @@ export class AuthController {
                 maxAge: 1000 * 60 * 60,
             });
 
-            res.cookie("refreshToken", Config.REFRESH_TOKEN_SECRET_KEY, {
+            res.cookie("refreshToken", refreshToken, {
                 domain: "localhost",
                 sameSite: "strict",
                 httpOnly: true,
                 maxAge: 1000 * 60 * 60 * 24 * 365,
             });
 
-            res.status(201).send("User registered successfully");
+            res.send({ statusCode: 200, message: "User registered successfully" });
         } catch (err) {
             next(err);
         }
     }
 
-
+    // Consumer Login
     async login(req: Request, res: Response, next: NextFunction) {
 
         const result = validationResult(req);
@@ -95,34 +83,14 @@ export class AuthController {
         const { email, password } = req.body;
         this.logger.debug("Login user : ", { email });
 
-
-
-
         // Generate Access Token
         // send the token as cookie
         // send the response
 
-
         try {
-            // Check if email exists in database
-            const user = await this.userService.findByEmail(email);
-            if (!user) {
-                const err = createHttpError(400, "Email or Password doesn't exists");
-                next(err);
-                return;
-            }
+            const user = await this.userService.loginUser({ email, password });
 
-            // Check if password matched
-            const passwordMatched = await this.credentialService.comparePassword(password, user.password);
-            if (!passwordMatched) {
-                const err = createHttpError(400, "Email or Password doesn't exists");
-                next(err);
-                return;
-            }
-
-            const user1 = await this.userService.loginUser({ email, password });
-
-            res.status(201).send("User registered successfully");
+            res.send({ statusCode: 200, message: "User Login successfully", data: { id: user.id } });
         } catch (err) {
             next(err);
         }

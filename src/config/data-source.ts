@@ -2,6 +2,7 @@ import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { User } from "../entity/User";
 import { Config } from "./index";
+import { RefreshToken } from "../entity/RefreshToken";
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -12,7 +13,7 @@ export const AppDataSource = new DataSource({
     database: Config.DB_NAME,
     synchronize: Config.NODE_ENV === "test" || Config.NODE_ENV === "dev", // Don't use this in production
     logging: false,
-    entities: [User],
+    entities: [User, RefreshToken],
     migrations: [],
     subscribers: [],
 });
@@ -22,14 +23,3 @@ AppDataSource.initialize()
         console.log("Connection initialized with database...");
     })
     .catch((error) => console.log(error));
-
-// export const getDataSource = (delay = 3000): Promise<DataSource> => {
-//     if (AppDataSource.isInitialized) return Promise.resolve(AppDataSource);
-
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             if (AppDataSource.isInitialized) resolve(AppDataSource);
-//             else reject("Failed to create connection with database");
-//         }, delay);
-//     });
-// };
