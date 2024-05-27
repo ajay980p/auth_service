@@ -3,11 +3,8 @@ import { UserService } from "../services/UserService";
 import { Logger } from "winston";
 import createHttpError from "http-errors";
 import { validationResult } from "express-validator";
-import { JwtPayload, sign } from "jsonwebtoken";
+import { JwtPayload } from "jsonwebtoken";
 import { CredentialService } from "../services/CredentialService";
-import { AppDataSource } from "../config/data-source";
-import { RefreshToken } from "../entity/RefreshToken";
-import { errorHandler } from "../validators/err-creators";
 import { TokenService } from "../services/TokenService";
 import { AuthRequest } from "../types";
 
