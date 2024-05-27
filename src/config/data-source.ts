@@ -5,14 +5,13 @@ import { Config } from "./index";
 import { RefreshToken } from "../entity/RefreshToken";
 
 export const AppDataSource = new DataSource({
-    type: "postgres",
+    type: "mysql",
     host: Config.DB_HOST,
     // port: Number(Config.DB_PORT),
-    port: 1024,
+    port: 3305,
     username: Config.DB_USERNAME,
     password: Config.DB_PASSWORD,
     database: Config.DB_NAME,
-    // synchronize: Config.NODE_ENV === "test" || Config.NODE_ENV === "dev", // Don't use this in production
     synchronize: false,
     logging: false,
     entities: [User, RefreshToken],
