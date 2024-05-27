@@ -1,11 +1,10 @@
 import express, { Request, Response, NextFunction } from "express";
 import { Config } from "./config";
 import logger from "./config/logger";
-// import bodyParser from "body-parser";
-import AuthRoute from "./routes/auth";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { AppDataSource } from "./config/data-source";
+import Api from "./routes/api"
 
 // Create Express app
 const app = express();
@@ -26,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Define routes
-app.use("/auth", AuthRoute);
+app.use("/api", Api);
 
 // Error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
