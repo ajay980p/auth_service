@@ -974,3 +974,93 @@
 {"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-16T06:42:12.203Z"}
 {"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-16T06:45:24.111Z"}
 {"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-16T06:50:19.627Z"}
+{"level":"error","message":"Error log : ","service":"auth_service","timestamp":"2024-05-16T07:10:33.541Z"}
+{"level":"error","message":"Error: No metadata for \"User\" was found.","service":"auth_service","timestamp":"2024-05-16T07:38:45.797Z"}
+{"level":"error","message":"Error starting server: listen EADDRINUSE: address already in use :::4001","service":"auth_service","timestamp":"2024-05-16T07:39:24.285Z"}
+{"level":"error","message":"Error starting server: listen EADDRINUSE: address already in use :::4001","service":"auth_service","timestamp":"2024-05-16T07:39:30.058Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-16T07:41:28.240Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-20T06:54:23.838Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-20T06:55:24.347Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-20T06:55:35.476Z"}
+{"level":"error","message":"Error: Email already exists","service":"auth_service","timestamp":"2024-05-20T06:55:58.585Z"}
+{"level":"error","message":"Error: No authorization token was found","service":"auth_service","timestamp":"2024-05-21T02:27:52.476Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-21T02:28:40.134Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-21T02:29:22.842Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-21T02:29:34.143Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-21T02:29:39.814Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-21T02:29:55.645Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-21T02:30:53.740Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-21T02:36:00.819Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-21T02:37:35.444Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-21T02:37:47.058Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-21T02:42:38.727Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-21T02:47:45.086Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:23:48.244Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:29:47.923Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:30:22.191Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-23T11:30:34.970Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:30:34.986Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-23T11:30:57.211Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:30:57.227Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-23T11:30:58.054Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:30:58.065Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-23T11:30:58.436Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:30:58.454Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-23T11:30:58.630Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:30:58.642Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-23T11:30:58.771Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:30:58.783Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-23T11:30:59.045Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:30:59.059Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-23T11:31:02.207Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-05-23T11:31:02.207Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:31:02.215Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-23T11:31:02.996Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-05-23T11:31:02.996Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:31:03.004Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-23T11:31:03.374Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-05-23T11:31:03.375Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:31:03.382Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-23T11:31:04.085Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-05-23T11:31:04.086Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:31:04.093Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-23T11:31:04.906Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-05-23T11:31:04.906Z"}
+{"level":"error","message":"Error: Too many requests to the JWKS endpoint","service":"auth_service","timestamp":"2024-05-23T11:31:04.912Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-23T11:31:05.615Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-05-23T11:31:05.616Z"}
+{"level":"error","message":"Error: Too many requests to the JWKS endpoint","service":"auth_service","timestamp":"2024-05-23T11:31:05.622Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-23T11:45:31.688Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-05-23T11:45:31.689Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:45:31.698Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-05-23T11:48:42.995Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-05-23T11:48:42.996Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:48:43.015Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T11:48:55.015Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T12:40:39.619Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T12:47:30.789Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:06:07.702Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:06:12.156Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:09:52.765Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:10:58.237Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:11:52.292Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:12:53.270Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:22:37.498Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:22:39.047Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:22:53.993Z"}
+{"level":"error","message":"Error: No authorization token was found","service":"auth_service","timestamp":"2024-05-23T13:40:25.938Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:40:47.404Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:41:57.997Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:41:59.469Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:42:32.183Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-23T13:42:33.474Z"}
+{"level":"error","message":"Error: No authorization token was found","service":"auth_service","timestamp":"2024-05-25T06:21:28.616Z"}
+{"level":"error","message":"Error: No authorization token was found","service":"auth_service","timestamp":"2024-05-25T06:25:49.464Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-25T06:27:31.673Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-25T06:32:18.781Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-25T06:35:50.661Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-25T06:36:21.158Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-25T06:58:00.837Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-25T06:58:15.577Z"}
+{"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-25T06:58:17.645Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-27T05:39:34.993Z"}

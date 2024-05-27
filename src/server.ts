@@ -4,9 +4,14 @@ import logger from "./config/logger";
 // import bodyParser from "body-parser";
 import AuthRoute from "./routes/auth";
 import cors from "cors";
+import cookieParser from "cookie-parser";
+import { AppDataSource } from "./config/data-source";
 
 // Create Express app
 const app = express();
+
+// Adding cookie parser middleware
+app.use(cookieParser());
 
 // Adding Cors middleware
 app.use(cors({
@@ -30,16 +35,29 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     logger.error(`Error: ${err.message}`);
 
     return res.send({
-        type: err.name,
+        success: false,
         statusCode: statusCode,
+        // type: err.name,
         message: err.message,
         errors: err.errors,
     });
 });
 
-// Start the server
-app.listen(Config.PORT, () => {
-    console.log(`Server is running on port ${Config.PORT}`);
-}).on("error", (err) => {
-    logger.error(`Error starting server: ${err.message}`);
-});
+
+const startServer = () => {
+    try {
+        app.listen(Config.PORT, () => {
+            AppDataSource.initialize();  // To make connection with database
+            logger.info("Database connected successfully");
+            logger.info(`Server is running on port ${Config.PORT}`);
+        })
+    } catch (err: unknown) {
+        if (err instanceof Error) {
+            logger.error(`Error starting server: ${err.message}`);
+        } else {
+            logger.error(`Unknown error starting server: ${String(err)}`);
+        }
+    }
+};
+
+void startServer();

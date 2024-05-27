@@ -68,6 +68,21 @@ export class UserService {
             const err = errorHandler(400, "Email doesn't exists", email);
             throw err;
         } else {
+            this.logger.info("User found by email", { id: user.id });
+            return user;
+        }
+    }
+
+
+    // Find User by Id
+    async findById(id: number) {
+        const user = await this.userRepository.findOne({ where: { id: id } });
+
+        if (!user) {
+            const err = errorHandler(400, "User doesn't exists", String(id));
+            throw err;
+        } else {
+            this.logger.info("User found by ID", { user });
             return user;
         }
     }

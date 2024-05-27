@@ -4,13 +4,12 @@ import { Logger } from "winston";
 import createHttpError from "http-errors";
 import { validationResult } from "express-validator";
 import { JwtPayload, sign } from "jsonwebtoken";
-import fs from "fs";
-import path from "path";
 import { CredentialService } from "../services/CredentialService";
 import { AppDataSource } from "../config/data-source";
 import { RefreshToken } from "../entity/RefreshToken";
 import { errorHandler } from "../validators/err-creators";
 import { TokenService } from "../services/TokenService";
+import { AuthRequest } from "../types";
 
 export class AuthController {
     private userService: UserService;
@@ -25,6 +24,8 @@ export class AuthController {
         this.tokenService = tokenService;
     }
 
+
+    // To Register User
     async register(req: Request, res: Response, next: NextFunction) {
 
         const result = validationResult(req);
@@ -41,7 +42,7 @@ export class AuthController {
             const user = await this.userService.createUser({ firstName, lastName, email, password });
 
             // Generating Access Token
-            const payLoad: JwtPayload = { userId: user.id };
+            const payLoad: JwtPayload = { id: user.id };
             const accessToken = await this.tokenService.generateAccessToken(payLoad);
 
             // Persisting the refresh Token in the database
@@ -64,15 +65,17 @@ export class AuthController {
                 maxAge: 1000 * 60 * 60 * 24 * 365,
             });
 
-            res.send({ statusCode: 200, message: "User registered successfully" });
+            res.send({ success: true, statusCode: 200, message: "User registered successfully" });
         } catch (err) {
             next(err);
         }
     }
 
+
     // Consumer Login
     async login(req: Request, res: Response, next: NextFunction) {
 
+        // Check the validation
         const result = validationResult(req);
         if (!result.isEmpty()) {
             const err = createHttpError(400, "Validation failed", { errors: result.array() });
@@ -83,16 +86,61 @@ export class AuthController {
         const { email, password } = req.body;
         this.logger.debug("Login user : ", { email });
 
-        // Generate Access Token
-        // send the token as cookie
-        // send the response
-
         try {
+            // Check if email exists and password matched
             const user = await this.userService.loginUser({ email, password });
 
-            res.send({ statusCode: 200, message: "User Login successfully", data: { id: user.id } });
+            // Generating Access Token
+            const payLoad: JwtPayload = { userId: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email };
+            const accessToken = await this.tokenService.generateAccessToken(payLoad);
+
+            // Sending the tokens as cookies
+            res.cookie("accessToken", accessToken, {
+                domain: "localhost",
+                sameSite: "strict",
+                httpOnly: true,
+                maxAge: 1000 * 60 * 60,
+            });
+
+            res.send({ success: true, statusCode: 200, message: "User Login successfully", data: { id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email } });
         } catch (err) {
             next(err);
+        }
+    }
+
+
+    // To Validate User
+    async self(req: AuthRequest, res: Response, next: NextFunction) {
+        try {
+            const user = await this.userService.findById(req.auth.id);
+            if (!user) {
+                return res.status(404).send({ success: false, statusCode: 404, message: "User not found" });
+            }
+
+            return res.send({
+                success: true,
+                statusCode: 200,
+                message: "User is authenticated",
+                user: {
+                    id: Number(user.id),
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    email: user.email,
+                }
+            })
+        } catch (err) {
+            next(err);
+        }
+    }
+
+
+    // To  logout User
+    async logout(req: Request, res: Response, next: NextFunction) {
+        try {
+
+        } catch (err) {
+            next(err);
+            return;
         }
     }
 }
