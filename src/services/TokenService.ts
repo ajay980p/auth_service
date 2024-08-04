@@ -3,8 +3,8 @@ import fs from "fs";
 import path from "path";
 import { errorHandler } from "../validators/err-creators";
 import { AppDataSource } from "../config/data-source";
-import { RefreshToken } from "../entity/RefreshToken";
-import { User } from "../entity/User";
+import { RefreshToken } from "../models/RefreshToken";
+import { User } from "../models/User";
 import { Repository } from "typeorm";
 
 export class TokenService {

@@ -9,9 +9,8 @@
         "build": "tsc",
         "format:check": "prettier . --check",
         "format:fix": "prettier . --write",
-        "migration:generate": "typeorm-ts-node-commonjs migration:generate",
-        "migration:run": "typeorm-ts-node-commonjs migration:run",
-        "migration:create": "typeorm-ts-node-commonjs migration:create"
+        "migration:generate": "drizzle-kit generate --config=drizzle.config.ts",
+        "migration:run": "node -r esbuild-register ./migrate.ts"
     },
     "keywords": [],
     "author": "",

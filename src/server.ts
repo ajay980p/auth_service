@@ -3,7 +3,7 @@ import { Config } from "./config";
 import logger from "./config/logger";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { connection, db } from "./config/data-source";
+import { connection } from "./config/data-source";
 import { drizzle } from 'drizzle-orm/postgres-js';
 
 // Create Express app

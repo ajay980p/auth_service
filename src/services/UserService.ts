@@ -1,5 +1,5 @@
 import { Repository } from "typeorm";
-import { User } from "../entity/User";
+import { User } from "../models/User";
 import { UserData } from "../types";
 import { Logger } from "winston";
 import bcrypt from "bcrypt";

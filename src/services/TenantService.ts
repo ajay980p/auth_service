@@ -1,5 +1,5 @@
 import { Repository } from "typeorm";
-import { Tenant } from "../entity/Tenant";
+import { Tenant } from "../models/Tenant";
 import { ITenant } from "../types";
 
 export class TenantService {
