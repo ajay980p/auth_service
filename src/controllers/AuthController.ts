@@ -70,74 +70,74 @@ export class AuthController {
 
 
     // Consumer Login
-    async login(req: Request, res: Response, next: NextFunction) {
+    // async login(req: Request, res: Response, next: NextFunction) {
 
-        // Check the validation
-        const result = validationResult(req);
-        if (!result.isEmpty()) {
-            const err = createHttpError(400, "Validation failed", { errors: result.array() });
-            next(err);
-            return;
-        }
+    //     // Check the validation
+    //     const result = validationResult(req);
+    //     if (!result.isEmpty()) {
+    //         const err = createHttpError(400, "Validation failed", { errors: result.array() });
+    //         next(err);
+    //         return;
+    //     }
 
-        const { email, password } = req.body;
-        this.logger.debug("Login user : ", { email });
+    //     const { email, password } = req.body;
+    //     this.logger.debug("Login user : ", { email });
 
-        try {
-            // Check if email exists and password matched
-            const user = await this.userService.loginUser({ email, password });
+    //     try {
+    //         // Check if email exists and password matched
+    //         const user = await this.userService.loginUser({ email, password });
 
-            // Generating Access Token
-            const payLoad: JwtPayload = { userId: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email };
-            const accessToken = await this.tokenService.generateAccessToken(payLoad);
+    //         // Generating Access Token
+    //         const payLoad: JwtPayload = { userId: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email };
+    //         const accessToken = await this.tokenService.generateAccessToken(payLoad);
 
-            // Sending the tokens as cookies
-            res.cookie("accessToken", accessToken, {
-                domain: "localhost",
-                sameSite: "strict",
-                httpOnly: true,
-                maxAge: 1000 * 60 * 60,
-            });
+    //         // Sending the tokens as cookies
+    //         res.cookie("accessToken", accessToken, {
+    //             domain: "localhost",
+    //             sameSite: "strict",
+    //             httpOnly: true,
+    //             maxAge: 1000 * 60 * 60,
+    //         });
 
-            res.send({ success: true, statusCode: 200, message: "User Login successfully", data: { id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email } });
-        } catch (err) {
-            next(err);
-        }
-    }
+    //         res.send({ success: true, statusCode: 200, message: "User Login successfully", data: { id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email } });
+    //     } catch (err) {
+    //         next(err);
+    //     }
+    // }
 
 
     // To Validate User
-    async self(req: AuthRequest, res: Response, next: NextFunction) {
-        try {
-            const user = await this.userService.findById(req.auth.id);
-            if (!user) {
-                return res.status(404).send({ success: false, statusCode: 404, message: "User not found" });
-            }
+    // async self(req: AuthRequest, res: Response, next: NextFunction) {
+    //     try {
+    //         const user = await this.userService.findById(req.auth.id);
+    //         if (!user) {
+    //             return res.status(404).send({ success: false, statusCode: 404, message: "User not found" });
+    //         }
 
-            return res.send({
-                success: true,
-                statusCode: 200,
-                message: "User is authenticated",
-                user: {
-                    id: Number(user.id),
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    email: user.email,
-                }
-            })
-        } catch (err) {
-            next(err);
-        }
-    }
+    //         return res.send({
+    //             success: true,
+    //             statusCode: 200,
+    //             message: "User is authenticated",
+    //             user: {
+    //                 id: Number(user.id),
+    //                 firstName: user.firstName,
+    //                 lastName: user.lastName,
+    //                 email: user.email,
+    //             }
+    //         })
+    //     } catch (err) {
+    //         next(err);
+    //     }
+    // }
 
 
     // To  logout User
-    async logout(req: Request, res: Response, next: NextFunction) {
-        try {
+    // async logout(req: Request, res: Response, next: NextFunction) {
+    //     try {
 
-        } catch (err) {
-            next(err);
-            return;
-        }
-    }
+    //     } catch (err) {
+    //         next(err);
+    //         return;
+    //     }
+    // }
 }

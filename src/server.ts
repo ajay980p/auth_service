@@ -3,8 +3,8 @@ import { Config } from "./config";
 import logger from "./config/logger";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { AppDataSource } from "./config/data-source";
-import Api from "./routes/api"
+import { connection, db } from "./config/data-source";
+import { drizzle } from 'drizzle-orm/postgres-js';
 
 // Create Express app
 const app = express();
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Define routes
-app.use("/api", Api);
+// app.use("/api", Api);
 
 // Error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
@@ -45,8 +45,8 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 
 const startServer = () => {
     try {
-        app.listen(Config.PORT, () => {
-            AppDataSource.initialize();  // To make connection with database
+        app.listen(Config.PORT, async () => {
+            await drizzle(connection); // Initialize database connection
             logger.info("Database connected successfully");
             logger.info(`Server is running on port ${Config.PORT}`);
         })
