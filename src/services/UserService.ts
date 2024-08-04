@@ -33,7 +33,7 @@ export class UserService {
 
             const insertedUser = await db.insert(users).values({ firstName, lastName, email, password: hashPassword, role }).returning({ id: users.id });
             this.logger.info("User created successfully", { id: users.id });
-            return user;
+            return insertedUser[0];
         } catch (err) {
             this.logger.error("Error while creating user : ");
             throw err;
@@ -43,14 +43,7 @@ export class UserService {
     // Check Email Exists into the Database or not
     async findByEmail(email: string) {
         const user = await db.query.users.findFirst({ where: eq(users.email, email), });
-
-        if (!user) {
-            const err = errorHandler(400, "Email doesn't exists", email);
-            throw err;
-        } else {
-            this.logger.info("User found by email", { id: user.id });
-            return user;
-        }
+        return user;
     }
 
     // Find User by Id

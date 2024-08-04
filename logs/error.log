@@ -1071,3 +1071,16 @@
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-06-02T05:57:56.547Z"}
 {"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-04T19:42:16.965Z"}
 {"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-04T19:46:09.267Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-04T21:07:39.645Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-08-04T21:07:57.710Z"}
+{"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-08-04T21:08:06.210Z"}
+{"level":"error","message":"Error: Cannot read properties of undefined (reading 'generateAccessToken')","service":"auth_service","timestamp":"2024-08-04T21:09:22.063Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-04T21:11:10.561Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-04T21:12:03.334Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-04T21:15:49.597Z"}
+{"level":"error","message":"Error: Cannot read properties of undefined (reading 'generateAccessToken')","service":"auth_service","timestamp":"2024-08-04T21:16:07.155Z"}
+{"level":"error","message":"Error: Cannot read properties of undefined (reading 'generateAccessToken')","service":"auth_service","timestamp":"2024-08-04T21:17:18.484Z"}
+{"level":"error","message":"Error: Cannot read properties of undefined (reading 'generateAccessToken')","service":"auth_service","timestamp":"2024-08-04T21:18:30.081Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-04T21:19:29.414Z"}
+{"level":"error","message":"Error: \"jwtid\" must be a string","service":"auth_service","timestamp":"2024-08-04T21:22:53.019Z"}
+{"level":"error","message":"Error: secretOrPrivateKey must be a symmetric key when using HS256","service":"auth_service","timestamp":"2024-08-04T21:36:28.070Z"}
