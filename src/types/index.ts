@@ -23,6 +23,7 @@ export interface AuthRequest extends Request {
         lastName: string,
         email: string,
         password: string,
+        role: string
     };
 }
 

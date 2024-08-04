@@ -1064,3 +1064,8 @@
 {"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-25T06:58:15.577Z"}
 {"level":"error","message":"Error: Not Found","service":"auth_service","timestamp":"2024-05-25T06:58:17.645Z"}
 {"level":"error","message":"Error: Email doesn't exists","service":"auth_service","timestamp":"2024-05-27T05:39:34.993Z"}
+{"level":"error","message":"Error: Field 'name' doesn't have a default value","service":"auth_service","timestamp":"2024-05-27T09:51:26.739Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-05-27T09:54:33.740Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-06-02T05:07:21.468Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-06-02T05:25:26.221Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-06-02T05:57:56.547Z"}
