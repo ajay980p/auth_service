@@ -3,7 +3,7 @@ import { sql } from "drizzle-orm";
 import { TenantsTable } from "./tenants";
 
 // Define the User table
-export const UserTable = pgTable("users", {
+export const users = pgTable("users", {
     id: serial("id").primaryKey(),
     firstName: varchar("firstName", { length: 100 }).unique().notNull(),
     lastName: varchar("lastName", { length: 100 }).notNull(),

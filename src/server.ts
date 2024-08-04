@@ -5,6 +5,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import { connection } from "./config/data-source";
 import { drizzle } from 'drizzle-orm/postgres-js';
+import Api from "./routes/api.route";
 
 // Create Express app
 const app = express();
@@ -25,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Define routes
-// app.use("/api", Api);
+app.use("/api", Api);
 
 // Error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {

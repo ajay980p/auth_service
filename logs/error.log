@@ -1069,3 +1069,5 @@
 {"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-06-02T05:07:21.468Z"}
 {"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-06-02T05:25:26.221Z"}
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-06-02T05:57:56.547Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-04T19:42:16.965Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-04T19:46:09.267Z"}

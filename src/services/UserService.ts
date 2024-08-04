@@ -1,38 +1,38 @@
-import { Repository } from "typeorm";
-import { User } from "../models/User";
+import { users } from "../models/User";
 import { UserData } from "../types";
 import { Logger } from "winston";
+import { errorHandler } from "../validators/err-creators";
+import { db } from "../config/data-source";
+import { eq } from 'drizzle-orm';
 import bcrypt from "bcrypt";
 import { CredentialService } from "./CredentialService";
-import { errorHandler } from "../validators/err-creators";
-const saltRounds = 10;
 
+const saltRounds = 10;
 export class UserService {
-    private userRepository: Repository<User>;
     private logger: Logger;
     private credentialService: CredentialService;
 
-    constructor(userRepository: Repository<User>, credentialService: CredentialService, logger: Logger) {
-        this.userRepository = userRepository;
-        this.logger = logger;
+    constructor(credentialService: CredentialService, logger: Logger) {
         this.credentialService = credentialService;
+        this.logger = logger;
     }
 
     // To Register User
-    async createUser({ firstName, lastName, email, password }: UserData) {
-        const user = await this.userRepository.findOne({ where: { email: email } });
+    async createUser({ firstName, lastName, email, password, role }: UserData) {
 
+        const user = await this.findByEmail(email);
         if (user) {
-            const err = errorHandler(400, "Email already exists", email);
+            const err = errorHandler(400, "Email already exists.", email);
             throw err;
         }
 
         try {
+            // To hash password
             const salt = await bcrypt.genSalt(saltRounds);
             const hashPassword = await bcrypt.hash(password, salt);
 
-            const user = await this.userRepository.save({ firstName, lastName, email, password: hashPassword });
-            this.logger.info("User created successfully", { id: user.id });
+            const insertedUser = await db.insert(users).values({ firstName, lastName, email, password: hashPassword, role }).returning({ id: users.id });
+            this.logger.info("User created successfully", { id: users.id });
             return user;
         } catch (err) {
             this.logger.error("Error while creating user : ");
@@ -40,29 +40,9 @@ export class UserService {
         }
     }
 
-    // To Login User
-    async loginUser({ email, password }: { email: string; password: string }) {
-        const user = await this.findByEmail(email);
-
-        try {
-            // To compare hashed password
-            const passwordMatched = await this.credentialService.comparePassword(password, user.password);
-            if (!passwordMatched) {
-                const err = errorHandler(400, "Email or Password doesn't exists", email);
-                throw err;
-            }
-
-            this.logger.info("User Password matched successfully", { id: user.id });
-            return user;
-        } catch (err) {
-            this.logger.error("Error while User Login : ");
-            throw err;
-        }
-    }
-
     // Check Email Exists into the Database or not
     async findByEmail(email: string) {
-        const user = await this.userRepository.findOne({ where: { email: email } });
+        const user = await db.query.users.findFirst({ where: eq(users.email, email), });
 
         if (!user) {
             const err = errorHandler(400, "Email doesn't exists", email);
@@ -73,17 +53,37 @@ export class UserService {
         }
     }
 
-
     // Find User by Id
-    async findById(id: number) {
-        const user = await this.userRepository.findOne({ where: { id: id } });
+    async findByUserId(userId: number) {
+        const user = await db.query.users.findFirst({ where: eq(users.id, userId), });
 
         if (!user) {
-            const err = errorHandler(400, "User doesn't exists", String(id));
+            const err = errorHandler(400, "User doesn't exists", String(userId));
             throw err;
         } else {
             this.logger.info("User found by ID", { user });
             return user;
         }
     }
+
+    // To Login User
+    // async loginUser({ email, password }: { email: string; password: string }) {
+    //     const user = await this.findByEmail(email);
+
+    //     try {
+    //         // To compare hashed password
+    //         const passwordMatched = await this.credentialService.comparePassword(password, user.password);
+    //         if (!passwordMatched) {
+    //             const err = errorHandler(400, "Email or Password doesn't exists", email);
+    //             throw err;
+    //         }
+
+    //         this.logger.info("User Password matched successfully", { id: user.id });
+    //         return user;
+    //     } catch (err) {
+    //         this.logger.error("Error while User Login : ");
+    //         throw err;
+    //     }
+    // }
+
 }
