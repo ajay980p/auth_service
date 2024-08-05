@@ -20,6 +20,7 @@ export class AuthController {
         this.logger = logger;
     }
 
+    // To Register a new User 
     async register(req: Request, res: Response, next: NextFunction) {
 
         const result = validationResult(req);
@@ -49,7 +50,71 @@ export class AuthController {
             res.cookie("accessToken", accessToken, { httpOnly: true, secure: true, sameSite: "strict" });
             res.cookie("refreshToken", refreshToken, { httpOnly: true, secure: true, sameSite: "strict" });
 
-            return res.status(201).json({ message: "User created successfully", user });
+            return res.json({ statusCode: 201, message: "User created successfully", user });
+        } catch (error) {
+            next(error);
+            return;
+        }
+    }
+
+    // To implement the login method, add the following code to the AuthController class:
+    async login(req: Request, res: Response, next: NextFunction) {
+
+        const result = validationResult(req);
+        if (!result.isEmpty()) {
+            const err = createHttpError(400, "Validation failed", { errors: result.array() });
+            next(err);
+            return;
+        }
+
+        const { email, password } = req.body;
+        this.logger.debug("New Request to login a User : ", { email, password: "********" });
+
+        try {
+            // To check User exist or not
+            let user = await this.userService.loginUser({ email, password });
+
+            // Generating Access Token
+            const payload: JwtPayload = { id: user.id }
+            const accessToken = await this.tokenService.generateAccessToken(payload);
+
+            // Generating Refresh Token
+            const refreshToken = await this.tokenService.generateRefreshToken(payload);
+
+            // Persisting Refresh Token into the Database
+            await this.tokenService.persistRefreshToken({ userId: user.id, refreshToken });
+
+            res.cookie("accessToken", accessToken, { httpOnly: true, secure: true, sameSite: "strict" });
+            res.cookie("refreshToken", refreshToken, { httpOnly: true, secure: true, sameSite: "strict" });
+
+            return res.json({ statusCode: 200, message: "User Login successfully", data: { id: user.id, firsName: user.firstName, lastName: user.lastName, email: user.email, tenantId: user.tenantId, role: user.role } });
+        } catch (error) {
+            next(error);
+            return;
+        }
+    }
+
+
+    // To implement the logout method, add the following code to the AuthController class:
+
+
+    // To implement the token verification method, add the following code to the AuthController class:
+    async self(req: Request, res: Response, next: NextFunction) {
+
+        try {
+
+        } catch (error) {
+            next(error);
+            return;
+        }
+    }
+
+    async logout(req: Request, res: Response, next: NextFunction) {
+
+        const userId = 14;
+        try {
+            const isDeleted = await this.userService.logoutUser(userId);
+            return res.json({ statusCode: 200, message: "User logout successfully", data: { id: userId } });
         } catch (error) {
             next(error);
             return;

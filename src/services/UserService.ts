@@ -6,6 +6,7 @@ import { db } from "../config/data-source";
 import { eq } from 'drizzle-orm';
 import bcrypt from "bcrypt";
 import { CredentialService } from "./CredentialService";
+import { refreshTokens } from "../models";
 
 const saltRounds = 10;
 export class UserService {
@@ -60,23 +61,42 @@ export class UserService {
     }
 
     // To Login User
-    // async loginUser({ email, password }: { email: string; password: string }) {
-    //     const user = await this.findByEmail(email);
+    async loginUser({ email, password }: { email: string; password: string }) {
+        const user = await this.findByEmail(email);
 
-    //     try {
-    //         // To compare hashed password
-    //         const passwordMatched = await this.credentialService.comparePassword(password, user.password);
-    //         if (!passwordMatched) {
-    //             const err = errorHandler(400, "Email or Password doesn't exists", email);
-    //             throw err;
-    //         }
+        try {
+            if (!user) {
+                const err = errorHandler(400, "Email or Password doesn't exists", email);
+                throw err;
+            }
 
-    //         this.logger.info("User Password matched successfully", { id: user.id });
-    //         return user;
-    //     } catch (err) {
-    //         this.logger.error("Error while User Login : ");
-    //         throw err;
-    //     }
-    // }
+            // To compare hashed password
+            const passwordMatched = await this.credentialService.comparePassword(password, user.password);
+            if (!passwordMatched) {
+                const err = errorHandler(400, "Email or Password doesn't exists", email);
+                throw err;
+            }
+
+            this.logger.info("User Password matched successfully", { id: user.id });
+            return user;
+        } catch (err) {
+            this.logger.error("Error while User Login : ");
+            throw err;
+        }
+    }
+
+
+    // To logout User
+    async logoutUser(userId: number) {
+        try {
+            const isDeleted = await db.delete(refreshTokens).where(eq(refreshTokens.userId, userId)).returning({ id: refreshTokens.id });
+            console.log("isDeleted or not : ", isDeleted);
+            this.logger.info("User logout successfully", { id: userId });
+            return isDeleted;
+        } catch (err) {
+            this.logger.error("Error while User Logout : ");
+            throw err;
+        }
+    }
 
 }

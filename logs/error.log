@@ -1084,3 +1084,12 @@
 {"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-04T21:19:29.414Z"}
 {"level":"error","message":"Error: \"jwtid\" must be a string","service":"auth_service","timestamp":"2024-08-04T21:22:53.019Z"}
 {"level":"error","message":"Error: secretOrPrivateKey must be a symmetric key when using HS256","service":"auth_service","timestamp":"2024-08-04T21:36:28.070Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-04T22:11:29.173Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-08-04T22:11:37.950Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-08-04T22:11:37.951Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-08-04T22:11:53.823Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-08-04T22:11:53.823Z"}
+{"level":"error","message":"Error while User Logout : ","service":"auth_service","timestamp":"2024-08-05T07:11:06.982Z"}
+{"level":"error","message":"Error: missing FROM-clause entry for table \"users\"","service":"auth_service","timestamp":"2024-08-05T07:11:06.983Z"}
+{"level":"error","message":"Error while User Logout : ","service":"auth_service","timestamp":"2024-08-05T07:12:10.251Z"}
+{"level":"error","message":"Error: missing FROM-clause entry for table \"users\"","service":"auth_service","timestamp":"2024-08-05T07:12:10.253Z"}
