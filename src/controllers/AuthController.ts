@@ -7,6 +7,9 @@ import { CredentialService } from "../services/CredentialService";
 import { JwtPayload } from "jsonwebtoken";
 import { TokenService } from "../services/TokenService";
 
+interface AuthRequest extends Request {
+    auth?: any;
+}
 export class AuthController {
     private logger: Logger;
     private userService: UserService;
@@ -19,6 +22,7 @@ export class AuthController {
         this.tokenService = tokenService;
         this.logger = logger;
     }
+
 
     // To Register a new User 
     async register(req: Request, res: Response, next: NextFunction) {
@@ -95,26 +99,29 @@ export class AuthController {
     }
 
 
-    // To implement the logout method, add the following code to the AuthController class:
-
-
     // To implement the token verification method, add the following code to the AuthController class:
-    async self(req: Request, res: Response, next: NextFunction) {
+    async self(req: AuthRequest, res: Response, next: NextFunction) {
+        const { id } = req.auth;
 
         try {
-
-        } catch (error) {
-            next(error);
+            const user = await this.userService.findByUserId(id);
+            res.send({ statusCode: 200, message: "User found successfully", data: { id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email, tenantId: user.tenantId, role: user.role } });
+        } catch (err) {
+            next(err);
             return;
         }
     }
 
-    async logout(req: Request, res: Response, next: NextFunction) {
 
-        const userId = 14;
+    // To implement the logout method, add the following code to the AuthController class:
+    async logout(req: AuthRequest, res: Response, next: NextFunction) {
+        const { id } = req.auth;
+
+        this.logger.debug("Request to logout a User : ", { id });
+
         try {
-            const isDeleted = await this.userService.logoutUser(userId);
-            return res.json({ statusCode: 200, message: "User logout successfully", data: { id: userId } });
+            const isDeleted = await this.userService.logoutUser(id);
+            return res.json({ statusCode: 200, message: "User logout successfully", data: { id: id } });
         } catch (error) {
             next(error);
             return;

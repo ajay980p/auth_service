@@ -6,6 +6,7 @@ import { CredentialService } from '../services/CredentialService';
 import { TokenService } from '../services/TokenService';
 import registerValidator from '../validators/register-validator';
 import loginValidators from '../validators/login-validators';
+import { authenticate } from '../middlewares/authenticate';
 
 const router = express.Router();
 const credentialService = new CredentialService();
@@ -21,12 +22,12 @@ router.post('/login', loginValidators, (req: Request, res: Response, next: NextF
     authController.login(req, res, next);
 });
 
-router.post('/self', (req: Request, res: Response, next: NextFunction) => {
+router.post('/self', authenticate, (req: Request, res: Response, next: NextFunction) => {
     authController.self(req, res, next);
 });
 
 
-router.post('/logout', (req: Request, res: Response, next: NextFunction) => {
+router.post('/logout', authenticate, (req: Request, res: Response, next: NextFunction) => {
     authController.logout(req, res, next);
 });
 

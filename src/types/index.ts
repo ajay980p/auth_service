@@ -14,11 +14,6 @@ export interface RegisterUserRequest extends Request {
 
 export interface AuthRequest extends Request {
     auth: {
-        // sub: string;
-        // role: string;
-        // id?: string;
-        // tenant: string;
-
         id: number,
         firstName: string,
         lastName: string,
