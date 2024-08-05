@@ -90,7 +90,6 @@ export class UserService {
     async logoutUser(userId: number) {
         try {
             const isDeleted = await db.delete(refreshTokens).where(eq(refreshTokens.userId, userId)).returning({ id: refreshTokens.id });
-            console.log("isDeleted or not : ", isDeleted);
             this.logger.info("User logout successfully", { id: userId });
             return isDeleted;
         } catch (err) {
