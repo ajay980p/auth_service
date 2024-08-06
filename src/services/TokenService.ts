@@ -6,6 +6,7 @@ import { Logger } from "winston";
 import { db } from "../config/data-source";
 import { refreshTokens } from "../models";
 import { refreshTokenPayload } from "../types";
+import { eq } from "drizzle-orm";
 
 export class TokenService {
     private logger: Logger;
@@ -24,7 +25,7 @@ export class TokenService {
     }
 
     async generateAccessToken(payload: JwtPayload) {
-        const accessToken = sign(payload, this.privateKey, { algorithm: "RS256", expiresIn: "1h", issuer: "auth-service" });
+        const accessToken = sign(payload, this.privateKey, { algorithm: "RS256", expiresIn: "20sec", issuer: "auth-service" });
         return accessToken;
     }
 
@@ -35,8 +36,12 @@ export class TokenService {
 
     async persistRefreshToken({ userId, refreshToken }: refreshTokenPayload) {
         const expiresAt = new Date(Date.now() + 1000 * 60 * 60 * 24 * 365);
-        const newRefreshToken = await db.insert(refreshTokens).values({ userId, refreshToken, expiresAt });
-        return newRefreshToken;
+        const existingRefreshToken = await db.select().from(refreshTokens).where(eq(refreshTokens.userId, userId)).limit(1);
+        if (existingRefreshToken.length > 0) {
+            return await db.update(refreshTokens).set({ refreshToken, expiresAt }).where(eq(refreshTokens.userId, userId));
+        } else {
+            return await db.insert(refreshTokens).values({ userId, refreshToken, expiresAt });
+        }
     }
 
     async verifyAccessToken(token: string) {

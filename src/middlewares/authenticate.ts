@@ -30,7 +30,7 @@ export const authenticate = async (req: AuthRequest, res: Response, next: NextFu
     }
 
     if (!token) {
-        return res.status(401).send({ success: false, statusCode: 401, message: "No authorization token was found" });
+        return res.send({ success: false, statusCode: 401, message: "No authorization token was found" });
     }
 
     try {
@@ -38,7 +38,7 @@ export const authenticate = async (req: AuthRequest, res: Response, next: NextFu
         req.auth = decoded as any;
         next();
     } catch (err) {
-        return res.status(401).send({ success: false, statusCode: 401, message: "Invalid token" });
+        return res.send({ success: false, statusCode: 401, message: "Invalid token" });
     }
 };
 export default router;
