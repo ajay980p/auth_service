@@ -1,12 +1,13 @@
 import fs from "fs";
 import path from "path";
-import { JwtPayload, sign, verify } from "jsonwebtoken";
+import { decode, JwtPayload, sign, verify } from "jsonwebtoken";
 import { errorHandler } from "../validators/err-creators";
 import { Logger } from "winston";
 import { db } from "../config/data-source";
 import { refreshTokens } from "../models";
 import { refreshTokenPayload } from "../types";
 import { eq } from "drizzle-orm";
+import { Config } from "../config";
 
 export class TokenService {
     private logger: Logger;
@@ -25,12 +26,12 @@ export class TokenService {
     }
 
     async generateAccessToken(payload: JwtPayload) {
-        const accessToken = sign(payload, this.privateKey, { algorithm: "RS256", expiresIn: "20sec", issuer: "auth-service" });
+        const accessToken = sign(payload, this.privateKey, { algorithm: "RS256", expiresIn: Config.ACCESS_TOKEN_EXPIRE, issuer: "auth-service" });
         return accessToken;
     }
 
     async generateRefreshToken(payload: JwtPayload) {
-        const refreshToken = sign(payload, "privateKey", { algorithm: "HS256", expiresIn: "1y", issuer: "auth-service", jwtid: String(payload.id) });
+        const refreshToken = sign(payload, "privateKey", { algorithm: "HS256", expiresIn: Config.REFRESH_TOKEN_EXPIRE, issuer: "auth-service", jwtid: String(payload.id) });
         return refreshToken;
     }
 
@@ -44,13 +45,39 @@ export class TokenService {
         }
     }
 
-    async verifyAccessToken(token: string) {
-        return new Promise((resolve, reject) => {
-            verify(token, this.privateKey, { algorithms: ["RS256"] }, (err, decoded) => {
-                if (err) {
+    async verifyAccessToken(accessTokenFromCookie: string, refreshTokenFromCookie: string) {
+        return new Promise(async (resolve, reject) => {
+            verify(accessTokenFromCookie, this.privateKey, { algorithms: ["RS256"] }, async (err, decoded) => {
+                if (err && err.name === 'TokenExpiredError') {
+                    // Decode the expired token to get the user ID
+                    const decodedExpiredToken = decode(accessTokenFromCookie) as { id: number };
+                    const userId = decodedExpiredToken.id;
+                    this.logger.info("User id matched during decode : ", { userId })
+
+                    try {
+                        // Fetch the refresh token from the database using the user ID
+                        const refreshTokenTable = await db.select().from(refreshTokens).where(eq(refreshTokens.userId, userId));
+                        this.logger.info("Refresh Token matched ")
+
+                        if (refreshTokenTable && refreshTokenTable[0].refreshToken === refreshTokenFromCookie) {
+                            // Generate a new access token
+                            const newAccessToken = await this.generateAccessToken({ id: userId });
+                            return resolve({ accessToken: newAccessToken });
+                        } else {
+                            this.logger.info("Refresh token does not match or user not found");
+                            return reject(new Error('Refresh token does not match or user not found'));
+                        }
+                    } catch (err) {
+                        this.logger.info("Error getting while verifying the token")
+                        return reject(err);
+                    }
+                } else if (err) {
+                    this.logger.info("Token not found.")
                     return reject(err);
+                } else {
+                    this.logger.info("Access token verified.")
+                    resolve(decoded);
                 }
-                resolve(decoded);
             });
         });
     }

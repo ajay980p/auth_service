@@ -1148,3 +1148,4 @@
 {"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-07T07:56:59.375Z"}
 {"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-08-07T09:16:01.495Z"}
 {"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-08-07T09:16:01.497Z"}
+{"level":"error","message":"Error: Tenant already exists.","service":"auth_service","timestamp":"2024-08-07T09:58:17.770Z"}

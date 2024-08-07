@@ -14,6 +14,7 @@ interface AuthRequest extends Request {
 
 interface AuthCookie {
     accessToken: string;
+    refreshToken: string;
 }
 
 const tokenService = new TokenService(logger);
@@ -21,20 +22,22 @@ const tokenService = new TokenService(logger);
 // Authentication middleware
 export const authenticate = async (req: AuthRequest, res: Response, next: NextFunction) => {
     const authHeader = req.headers.authorization;
-    let token: string | undefined;
+    let accessToken: string | undefined;
+    let refreshToken: string | undefined;
 
     if (authHeader && authHeader.startsWith("Bearer ")) {
-        token = authHeader.split(" ")[1];
+        // token = authHeader.split(" ")[1];
     } else if (req.cookies) {
-        token = (req.cookies as AuthCookie).accessToken;
+        accessToken = (req.cookies as AuthCookie).accessToken;
+        refreshToken = (req.cookies as AuthCookie).refreshToken;
     }
 
-    if (!token) {
+    if (!accessToken || !refreshToken) {
         return res.send({ success: false, statusCode: 401, message: "No authorization token was found" });
     }
 
     try {
-        const decoded = await tokenService.verifyAccessToken(token);
+        const decoded = await tokenService.verifyAccessToken(accessToken, refreshToken);
         req.auth = decoded as any;
         next();
     } catch (err) {
