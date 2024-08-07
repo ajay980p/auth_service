@@ -1160,3 +1160,10 @@
 {"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-07T10:58:43.736Z"}
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-07T10:59:09.628Z"}
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-07T11:00:48.460Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-07T11:34:04.744Z"}
+{"level":"error","message":"Error: insert or update on table \"refreshTokens\" violates foreign key constraint \"refreshTokens_userId_users_id_fk\"","service":"auth_service","timestamp":"2024-08-07T11:46:01.693Z"}
+{"level":"error","message":"Error: insert or update on table \"refreshTokens\" violates foreign key constraint \"refreshTokens_userId_users_id_fk\"","service":"auth_service","timestamp":"2024-08-07T11:46:48.445Z"}
+{"level":"error","message":"Error while creating user : ","service":"auth_service","timestamp":"2024-08-07T11:51:36.935Z"}
+{"level":"error","message":"Error: duplicate key value violates unique constraint \"users_firstName_unique\"","service":"auth_service","timestamp":"2024-08-07T11:51:36.936Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-08-07T12:00:54.984Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-08-07T12:00:54.986Z"}

@@ -32,4 +32,9 @@ router.post('/get_all_tenant', authenticate, canAccess([Roles.ADMIN, Roles.CONSU
 });
 
 
+router.post('/createUser', authenticate, canAccess([Roles.ADMIN]), (req: Request, res: Response, next: NextFunction) => {
+    tenantController.getAllTenants(req, res, next);
+});
+
+
 export default router;

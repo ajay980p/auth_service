@@ -26,9 +26,9 @@ router.post('/self', authenticate, (req: Request, res: Response, next: NextFunct
     authController.self(req, res, next);
 });
 
-
 router.post('/logout', authenticate, (req: Request, res: Response, next: NextFunction) => {
     authController.logout(req, res, next);
 });
+
 
 export default router;

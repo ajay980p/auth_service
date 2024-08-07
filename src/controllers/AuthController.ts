@@ -6,6 +6,7 @@ import { UserService } from "../services/UserService";
 import { CredentialService } from "../services/CredentialService";
 import { JwtPayload } from "jsonwebtoken";
 import { TokenService } from "../services/TokenService";
+import { Roles } from "../constants/constant";
 
 interface AuthRequest extends Request {
     auth?: any;
@@ -34,17 +35,16 @@ export class AuthController {
             return;
         }
 
-        const { firstName, lastName, email, password, role } = req.body;
-        this.logger.info("Registering user : ", { firstName, lastName, email, role });
+        const { firstName, lastName, email, password } = req.body;
+        this.logger.info("Registering user : ", { firstName, lastName, email, role: Roles.CONSUMER });
 
         try {
             // Creating a User into the Database
-            const user = await this.userService.createUser({ firstName, lastName, email, password, role });
+            const user = await this.userService.createUser({ firstName, lastName, email, password, role: Roles.CONSUMER });
 
             // Generating Access Token
-            const payload: JwtPayload = { id: user.id, firstName, lastName, email, role }
+            const payload: JwtPayload = { id: user.id, firstName, lastName, email, role: Roles.CONSUMER }
             const accessToken = await this.tokenService.generateAccessToken(payload);
-
 
             // Generating Refresh Token
             const refreshToken = await this.tokenService.generateRefreshToken(payload);
@@ -73,7 +73,7 @@ export class AuthController {
         }
 
         const { email, password } = req.body;
-        this.logger.debug("New Request to login a User : ", { email, password: "********" });
+        this.logger.info("New Request to login a User : ", { email, password: "********" });
 
         try {
             // To check User exist or not
@@ -118,7 +118,7 @@ export class AuthController {
     async logout(req: AuthRequest, res: Response, next: NextFunction) {
         const { id } = req.auth;
 
-        this.logger.debug("Request to logout a User : ", { id });
+        this.logger.info("Request to logout a User : ", { id });
 
         try {
             const isDeleted = await this.userService.logoutUser(id);

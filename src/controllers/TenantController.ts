@@ -25,7 +25,7 @@ export class TenantController {
         }
 
         const { name, address, mailId } = req.body;
-        this.logger.debug(`Getting data towards Tenant Controller: `, { name, address, mailId });
+        this.logger.info(`Getting data towards Tenant Controller: `, { name, address, mailId });
 
         try {
             const tenant = await this.tenantService.create({ name, address, mailId });
@@ -49,7 +49,7 @@ export class TenantController {
         }
 
         const { id, name, address, mailId } = req.body;
-        this.logger.debug(`Getting data towards Tenant Controller: `, { id, name, address, mailId });
+        this.logger.info(`Getting data towards Tenant Controller: `, { id, name, address, mailId });
 
         try {
             const tenant = await this.tenantService.updateTenant({ id, name, address, mailId });
@@ -75,7 +75,7 @@ export class TenantController {
         }
 
         const { id } = req.body;
-        this.logger.debug(`Getting data towards Tenant Controller: `, { id });
+        this.logger.info(`Getting data towards Tenant Controller: `, { id });
 
         try {
             const tenant = await this.tenantService.deleteTenant(id);
@@ -91,7 +91,7 @@ export class TenantController {
 
     // To get all Tenants
     async getAllTenants(req: Request, res: Response, next: NextFunction) {
-        this.logger.debug(`Getting data towards Tenant Controller: `);
+        this.logger.info(`Getting data towards Tenant Controller: `);
 
         try {
             const tenants = await this.tenantService.getAllTenants();
