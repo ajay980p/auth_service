@@ -1,1 +1,0 @@
-ALTER TABLE "refreshTokens" ADD COLUMN "refreshToken" varchar(500) NOT NULL;

@@ -1093,3 +1093,56 @@
 {"level":"error","message":"Error: missing FROM-clause entry for table \"users\"","service":"auth_service","timestamp":"2024-08-05T07:11:06.983Z"}
 {"level":"error","message":"Error while User Logout : ","service":"auth_service","timestamp":"2024-08-05T07:12:10.251Z"}
 {"level":"error","message":"Error: missing FROM-clause entry for table \"users\"","service":"auth_service","timestamp":"2024-08-05T07:12:10.253Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-08-06T05:31:30.572Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-08-06T05:31:30.573Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-08-06T05:32:17.605Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-08-06T05:32:17.605Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-06T05:33:53.329Z"}
+{"level":"error","message":"Error: Converting circular structure to JSON\n    --> starting at object with constructor 'PgSerial'\n    |     property 'table' -> object with constructor 'PgTable'\n    --- property 'id' closes the circle","service":"auth_service","timestamp":"2024-08-06T09:27:04.448Z"}
+{"level":"error","message":"Error: Converting circular structure to JSON\n    --> starting at object with constructor 'PgSerial'\n    |     property 'table' -> object with constructor 'PgTable'\n    --- property 'id' closes the circle","service":"auth_service","timestamp":"2024-08-06T09:28:32.987Z"}
+{"level":"error","message":"Error: duplicate key value violates unique constraint \"tenants_name_unique\"","service":"auth_service","timestamp":"2024-08-06T09:29:03.924Z"}
+{"level":"error","message":"Error: Converting circular structure to JSON\n    --> starting at object with constructor 'PgSerial'\n    |     property 'table' -> object with constructor 'PgTable'\n    --- property 'id' closes the circle","service":"auth_service","timestamp":"2024-08-06T09:29:27.077Z"}
+{"level":"error","message":"Error: Converting circular structure to JSON\n    --> starting at object with constructor 'PgSerial'\n    |     property 'table' -> object with constructor 'PgTable'\n    --- property 'id' closes the circle","service":"auth_service","timestamp":"2024-08-06T09:31:51.097Z"}
+{"level":"error","message":"Error: duplicate key value violates unique constraint \"tenants_name_unique\"","service":"auth_service","timestamp":"2024-08-06T09:33:08.267Z"}
+{"level":"error","message":"Error: Converting circular structure to JSON\n    --> starting at object with constructor 'PgSerial'\n    |     property 'table' -> object with constructor 'PgTable'\n    --- property 'id' closes the circle","service":"auth_service","timestamp":"2024-08-06T09:33:23.015Z"}
+{"level":"error","message":"Error: duplicate key value violates unique constraint \"tenants_name_unique\"","service":"auth_service","timestamp":"2024-08-06T09:34:51.278Z"}
+{"level":"error","message":"Error: duplicate key value violates unique constraint \"tenants_name_unique\"","service":"auth_service","timestamp":"2024-08-06T09:35:35.956Z"}
+{"level":"error","message":"Error: Converting circular structure to JSON\n    --> starting at object with constructor 'PgSerial'\n    |     property 'table' -> object with constructor 'PgTable'\n    --- property 'id' closes the circle","service":"auth_service","timestamp":"2024-08-06T09:35:41.198Z"}
+{"level":"error","message":"Error: Converting circular structure to JSON\n    --> starting at object with constructor 'PgSerial'\n    |     property 'table' -> object with constructor 'PgTable'\n    --- property 'id' closes the circle","service":"auth_service","timestamp":"2024-08-07T05:43:52.337Z"}
+{"level":"error","message":"Error: duplicate key value violates unique constraint \"tenants_name_unique\"","service":"auth_service","timestamp":"2024-08-07T05:47:11.969Z"}
+{"level":"error","message":"Error: Converting circular structure to JSON\n    --> starting at object with constructor 'PgSerial'\n    |     property 'table' -> object with constructor 'PgTable'\n    --- property 'id' closes the circle","service":"auth_service","timestamp":"2024-08-07T05:47:16.131Z"}
+{"level":"error","message":"Error: Converting circular structure to JSON\n    --> starting at object with constructor 'PgSerial'\n    |     property 'table' -> object with constructor 'PgTable'\n    --- property 'id' closes the circle","service":"auth_service","timestamp":"2024-08-07T05:47:47.630Z"}
+{"level":"error","message":"Error: Converting circular structure to JSON\n    --> starting at object with constructor 'PgSerial'\n    |     property 'table' -> object with constructor 'PgTable'\n    --- property 'id' closes the circle","service":"auth_service","timestamp":"2024-08-07T05:48:43.720Z"}
+{"level":"error","message":"Error: duplicate key value violates unique constraint \"tenants_name_unique\"","service":"auth_service","timestamp":"2024-08-07T05:51:14.028Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-07T06:19:32.329Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T06:19:55.132Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T06:20:58.879Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T06:24:37.773Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T06:25:02.204Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T06:25:26.359Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T06:25:29.205Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T07:07:14.190Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T07:39:30.277Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-07T07:39:38.983Z"}
+{"level":"error","message":"Error: Tenants already exists.","service":"auth_service","timestamp":"2024-08-07T07:40:07.198Z"}
+{"level":"error","message":"Error: Tenants already exists.","service":"auth_service","timestamp":"2024-08-07T07:40:51.195Z"}
+{"level":"error","message":"Error: Tenants already exists.","service":"auth_service","timestamp":"2024-08-07T07:42:21.756Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T07:42:57.272Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T07:43:06.665Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T07:43:40.948Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T07:46:18.080Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T07:46:35.920Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T07:47:12.375Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T07:47:32.373Z"}
+{"level":"error","message":"Error: Cannot read properties of undefined (reading 'id')","service":"auth_service","timestamp":"2024-08-07T07:48:50.412Z"}
+{"level":"error","message":"Error: Cannot read properties of undefined (reading 'id')","service":"auth_service","timestamp":"2024-08-07T07:50:09.571Z"}
+{"level":"error","message":"Error: Cannot read properties of undefined (reading 'id')","service":"auth_service","timestamp":"2024-08-07T07:53:02.916Z"}
+{"level":"error","message":"Error: Cannot read properties of undefined (reading 'id')","service":"auth_service","timestamp":"2024-08-07T07:53:25.386Z"}
+{"level":"error","message":"Error: Cannot read properties of undefined (reading 'id')","service":"auth_service","timestamp":"2024-08-07T07:53:48.259Z"}
+{"level":"error","message":"Error: Tenants doesn't exists for id : ","service":"auth_service","timestamp":"2024-08-07T07:54:00.891Z"}
+{"level":"error","message":"Error: Tenants doesn't exists for id : ","service":"auth_service","timestamp":"2024-08-07T07:54:30.968Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-07T07:55:42.192Z"}
+{"level":"error","message":"Error: Tenants doesn't exists for id : ","service":"auth_service","timestamp":"2024-08-07T07:55:47.890Z"}
+{"level":"error","message":"Error: Tenants doesn't exists for id : ","service":"auth_service","timestamp":"2024-08-07T07:56:28.490Z"}
+{"level":"error","message":"Error: Tenants already exists.","service":"auth_service","timestamp":"2024-08-07T07:56:42.767Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-07T07:56:59.375Z"}

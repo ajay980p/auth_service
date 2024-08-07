@@ -6,6 +6,7 @@ export const TenantsTable = pgTable("tenants", {
     id: serial("id").primaryKey(),
     name: varchar("name", { length: 100 }).unique().notNull(),
     address: varchar("address", { length: 100 }).notNull(),
+    mailId: varchar("mailId", { length: 100 }).notNull().unique(),
     created_at: timestamp("created_at").default(sql`current_timestamp`),
     updated_at: timestamp("updated_at").default(sql`current_timestamp`),
 });

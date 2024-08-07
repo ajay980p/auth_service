@@ -32,6 +32,7 @@ export type AuthCookie = {
 export interface ITenant {
     name: string;
     address: string;
+    mailId: string;
 }
 
 

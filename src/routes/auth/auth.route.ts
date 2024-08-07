@@ -1,12 +1,12 @@
 import express, { Request, Response, NextFunction } from 'express';
-import { AuthController } from '../controllers/AuthController';
-import logger from '../config/logger';
-import { UserService } from '../services/UserService';
-import { CredentialService } from '../services/CredentialService';
-import { TokenService } from '../services/TokenService';
-import registerValidator from '../validators/register-validator';
-import loginValidators from '../validators/login-validators';
-import { authenticate } from '../middlewares/authenticate';
+import { AuthController } from '../../controllers/AuthController';
+import logger from '../../config/logger';
+import { UserService } from '../../services/UserService';
+import { CredentialService } from '../../services/CredentialService';
+import { TokenService } from '../../services/TokenService';
+import registerValidator from '../../validators/register-validator';
+import loginValidators from '../../validators/login-validators';
+import { authenticate } from '../../middlewares/authenticate';
 
 const router = express.Router();
 const credentialService = new CredentialService();
