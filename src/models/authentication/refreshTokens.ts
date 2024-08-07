@@ -1,6 +1,6 @@
 import { integer, pgTable, serial, timestamp, varchar } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
-import { users } from "./User";
+import { users } from "../user/User";
 
 // Define the refreshTokens table
 export const refreshTokens = pgTable("refreshTokens", {

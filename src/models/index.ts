@@ -1,3 +1,3 @@
-export * from './User';
-export * from './tenants';
-export * from './refreshTokens';
+export * from './user/User';
+export * from './tenants/tenants';
+export * from './authentication/refreshTokens';

@@ -1,4 +1,4 @@
-import { users } from "../models/User";
+import { users } from "../models/user/User";
 import { UserData } from "../types";
 import { Logger } from "winston";
 import { errorHandler } from "../validators/err-creators";

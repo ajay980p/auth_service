@@ -1,6 +1,6 @@
 import { integer, pgTable, serial, timestamp, varchar } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
-import { TenantsTable } from "./tenants";
+import { TenantsTable } from "../tenants/tenants";
 
 // Define the User table
 export const users = pgTable("users", {
