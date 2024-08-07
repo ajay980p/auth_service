@@ -5,6 +5,8 @@ import logger from '../../config/logger';
 import { createTenantValidator, deleteTenantValidator, updateTenantValidator } from '../../validators/tenant-validators';
 import { CreateTenantRequest } from '../../types';
 import { authenticate } from '../../middlewares/authenticate';
+import { canAccess } from '../../middlewares/canAccess';
+import { Roles } from '../../constants/constant';
 const router = express.Router();
 
 const tenantService = new TenantService();
@@ -25,7 +27,7 @@ router.post('/delete_tenant', deleteTenantValidator, (req: Request, res: Respons
 });
 
 
-router.post('/get_all_tenant', authenticate, (req: Request, res: Response, next: NextFunction) => {
+router.post('/get_all_tenant', authenticate, canAccess([Roles.ADMIN, Roles.CONSUMER]), (req: Request, res: Response, next: NextFunction) => {
     tenantController.getAllTenants(req, res, next);
 });
 

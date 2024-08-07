@@ -35,15 +35,16 @@ export class AuthController {
         }
 
         const { firstName, lastName, email, password, role } = req.body;
-        this.logger.debug("Registering user : ", { firstName, lastName, email, role });
+        this.logger.info("Registering user : ", { firstName, lastName, email, role });
 
         try {
             // Creating a User into the Database
             const user = await this.userService.createUser({ firstName, lastName, email, password, role });
 
             // Generating Access Token
-            const payload: JwtPayload = { id: user.id }
+            const payload: JwtPayload = { id: user.id, firstName, lastName, email, role }
             const accessToken = await this.tokenService.generateAccessToken(payload);
+
 
             // Generating Refresh Token
             const refreshToken = await this.tokenService.generateRefreshToken(payload);
@@ -79,7 +80,7 @@ export class AuthController {
             let user = await this.userService.loginUser({ email, password });
 
             // Generating Access Token
-            const payload: JwtPayload = { id: user.id }
+            const payload: JwtPayload = { id: user.id, firstName: user.firstName, lastName: user.lastName, email, role: user.role }
             const accessToken = await this.tokenService.generateAccessToken(payload);
 
             // Generating Refresh Token
