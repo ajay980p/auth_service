@@ -36,9 +36,31 @@ export class UserController {
             next(err);
             return;
         }
+    }
 
 
+    // To delete a specific user
+    async deleteUserById(req: Request, res: Response, next: NextFunction) {
 
+        const result = validationResult(req);
+        if (!result.isEmpty()) {
+            const err = createHttpError(400, "Validation failed", { errors: result.array() });
+            next(err);
+            return;
+        }
+
+        const { userId } = req.body;
+        this.logger.info("Deleting user : ", { userId });
+
+        try {
+            await this.userService.deleteUser(userId);
+            this.logger.info("User deleted successfully", { userId });
+
+            return res.json({ statusCode: 200, message: "User deleted successfully", userId });
+        } catch (err) {
+            next(err);
+            return;
+        }
     }
 
 

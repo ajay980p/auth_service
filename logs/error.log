@@ -1167,3 +1167,9 @@
 {"level":"error","message":"Error: duplicate key value violates unique constraint \"users_firstName_unique\"","service":"auth_service","timestamp":"2024-08-07T11:51:36.936Z"}
 {"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-08-07T12:00:54.984Z"}
 {"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-08-07T12:00:54.986Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-07T13:06:17.897Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T13:06:33.685Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-07T13:08:48.519Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-07T13:09:04.517Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-07T13:09:23.994Z"}
+{"level":"error","message":"Error: User doesn't exists","service":"auth_service","timestamp":"2024-08-07T13:10:13.007Z"}

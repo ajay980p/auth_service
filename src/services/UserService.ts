@@ -98,4 +98,21 @@ export class UserService {
         }
     }
 
+
+    // To delete specific User
+    async deleteUser(userId: number) {
+
+        // To check if user exist or not
+        const isUserExists = await this.findByUserId(userId);
+
+        try {
+            const isDeleted = await db.delete(users).where(eq(users.id, userId)).returning({ id: users.id });
+            this.logger.info("User deleted successfully", { id: userId });
+            return isDeleted;
+        } catch (err) {
+            this.logger.error("Error while deleting user : ");
+            throw err;
+        }
+    }
+
 }
