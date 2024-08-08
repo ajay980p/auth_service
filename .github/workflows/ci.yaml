@@ -48,7 +48,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
-  build and push Docker:
+  build-and-push-Docker:
     
     name: Build and Push Docker Image
     needs: build-and-test
