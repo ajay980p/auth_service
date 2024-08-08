@@ -58,7 +58,7 @@ jobs:
       IMAGE_NAME: mernstack_auth-service
       IMAGE_TAG: build-${{ github.run_number }}
 
-    IF: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
