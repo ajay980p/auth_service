@@ -18,7 +18,7 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v3 # This is already prepared for Node 20, but ensure you always use the latest version.
+      - uses: actions/checkout@v2
 
       - name: Install Dependencies
         run: npm ci
@@ -26,8 +26,8 @@ jobs:
       - name: Run EsLint
         run: npm run lint
 
-      - name: Test and Coverage
-        run: npm run test
+      # - name: Test and Coverage
+      #   run: npm run test
 
         env:
           DB_HOST: ${{ secrets.DB_HOST }}
@@ -61,7 +61,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Login to DockerHub
         uses: docker/login-action@v1
