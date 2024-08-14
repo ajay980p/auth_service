@@ -23,7 +23,7 @@ jobs:
           node-version: '20'  # Use Node.js version 20
 
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.OS }}-node-20-${{ hashFiles('**/package-lock.json') }}
