@@ -117,12 +117,16 @@ export class AuthController {
     // To implement the logout method, add the following code to the AuthController class:
     async logout(req: AuthRequest, res: Response, next: NextFunction) {
         const { id } = req.auth;
-
         this.logger.info("Request to logout a User : ", { id });
 
         try {
             const isDeleted = await this.userService.logoutUser(id);
-            return res.status(200).json({ statusCode: 200, message: "User logout successfully", data: { id: id } });
+
+            // Clear the refreshToken and accessToken cookies
+            res.clearCookie('refreshToken', { httpOnly: true, secure: true, sameSite: 'strict' });
+            res.clearCookie('accessToken', { httpOnly: true, secure: true, sameSite: 'strict' });
+
+            return res.status(200).json({ status: 'success', statusCode: 200, message: "User logout successfully", data: { id: id } });
         } catch (error) {
             next(error);
             return;
