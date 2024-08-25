@@ -4,15 +4,10 @@ node_modules/
 build/
 tmp/
 temp/
-
 .env.prod
-
 .env.test
-
 .env.dev
-
 ./logs
-
 certs/
-
 github/
+error.log
