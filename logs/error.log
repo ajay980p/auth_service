@@ -1175,3 +1175,5 @@
 {"level":"error","message":"Error: User doesn't exists","service":"auth_service","timestamp":"2024-08-07T13:10:13.007Z"}
 {"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-07T13:19:41.854Z"}
 {"level":"error","message":"Error: User doesn't exists","service":"auth_service","timestamp":"2024-08-07T13:19:49.727Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-08-25T15:09:47.664Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-08-25T15:09:47.669Z"}

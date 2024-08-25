@@ -1,7 +1,4 @@
 import express, { Request, Response, NextFunction } from 'express';
-import fs from 'fs';
-import path from 'path';
-import jwt from 'jsonwebtoken';
 import { TokenService } from '../services/TokenService';
 import logger from '../config/logger';
 
@@ -33,7 +30,7 @@ export const authenticate = async (req: AuthRequest, res: Response, next: NextFu
     }
 
     if (!accessToken || !refreshToken) {
-        return res.send({ success: false, statusCode: 401, message: "No authorization token was found" });
+        return res.status(401).send({ success: false, statusCode: 401, message: "No authorization token was found" });
     }
 
     try {
@@ -41,7 +38,7 @@ export const authenticate = async (req: AuthRequest, res: Response, next: NextFu
         req.auth = decoded as any;
         next();
     } catch (err) {
-        return res.send({ success: false, statusCode: 401, message: "Invalid token" });
+        return res.status(401).send({ success: false, statusCode: 401, message: "Invalid token" });
     }
 };
 export default router;
