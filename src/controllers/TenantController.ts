@@ -55,7 +55,7 @@ export class TenantController {
             const tenant = await this.tenantService.updateTenant({ id, name, address, mailId });
             this.logger.info(`Tenant updated: `, { id: tenant[0].id });
 
-            return res.json({ statusCode: 200, message: "Tenant updated successfully", data: { id: tenant[0].id } });
+            return res.status(200).json({ statusCode: 200, message: "Tenant updated successfully", data: { id: tenant[0].id } });
         } catch (err) {
             next(err);
             return;
@@ -81,7 +81,7 @@ export class TenantController {
             const tenant = await this.tenantService.deleteTenant(id);
             this.logger.info(`Tenant deleted successfully : `, { id: tenant[0].id });
 
-            return res.json({ statusCode: 200, message: "Tenant deleted successfully", data: { id: tenant[0].id } });
+            return res.status(200).json({ statusCode: 200, message: "Tenant deleted successfully", data: { id: tenant[0].id } });
         } catch (err) {
             next(err);
             return;
@@ -97,7 +97,7 @@ export class TenantController {
             const tenants = await this.tenantService.getAllTenants();
             this.logger.info(`All Tenants data fetched successfully`);
 
-            return res.json({ statusCode: 200, message: "All Tenants data fetched successfully", data: tenants });
+            return res.status(200).json({ statusCode: 200, message: "All Tenants data fetched successfully", data: tenants });
         } catch (err) {
             next(err);
             return;

@@ -92,7 +92,7 @@ export class AuthController {
             res.cookie("accessToken", accessToken, { httpOnly: true, secure: true, sameSite: "strict" });
             res.cookie("refreshToken", refreshToken, { httpOnly: true, secure: true, sameSite: "strict" });
 
-            return res.json({ statusCode: 200, message: "User Login successfully", data: { id: user.id, firsName: user.firstName, lastName: user.lastName, email: user.email, tenantId: user.tenantId, role: user.role } });
+            return res.status(200).json({ statusCode: 200, message: "User Login successfully", data: { id: user.id, firsName: user.firstName, lastName: user.lastName, email: user.email, tenantId: user.tenantId, role: user.role } });
         } catch (error) {
             next(error);
             return;
@@ -122,7 +122,7 @@ export class AuthController {
 
         try {
             const isDeleted = await this.userService.logoutUser(id);
-            return res.json({ statusCode: 200, message: "User logout successfully", data: { id: id } });
+            return res.status(200).json({ statusCode: 200, message: "User logout successfully", data: { id: id } });
         } catch (error) {
             next(error);
             return;

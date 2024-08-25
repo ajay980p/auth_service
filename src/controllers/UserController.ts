@@ -31,7 +31,7 @@ export class UserController {
             const user = await this.userService.createUser({ firstName, lastName, email, password, role: Roles.CONSUMER });
             this.logger.info("User created successfully", { firstName, lastName, email, role: Roles.CONSUMER });
 
-            return res.json({ statusCode: 201, message: "User created successfully", user });
+            return res.status(201).json({ statusCode: 201, message: "User created successfully", user });
         } catch (err) {
             next(err);
             return;
@@ -56,7 +56,7 @@ export class UserController {
             await this.userService.deleteUser(userId);
             this.logger.info("User deleted successfully", { userId });
 
-            return res.json({ statusCode: 200, message: "User deleted successfully", userId });
+            return res.status(200).json({ statusCode: 200, message: "User deleted successfully", userId });
         } catch (err) {
             next(err);
             return;
