@@ -55,7 +55,7 @@ export class AuthController {
             res.cookie("accessToken", accessToken, { httpOnly: true, secure: true, sameSite: "strict" });
             res.cookie("refreshToken", refreshToken, { httpOnly: true, secure: true, sameSite: "strict" });
 
-            return res.json({ statusCode: 201, message: "User created successfully", user });
+            return res.status(201).json({ statusCode: 201, message: "User created successfully", user });
         } catch (error) {
             next(error);
             return;
@@ -106,7 +106,7 @@ export class AuthController {
 
         try {
             const user = await this.userService.findByUserId(id);
-            res.send({ statusCode: 200, message: "User found successfully", data: { id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email, tenantId: user.tenantId, role: user.role } });
+            res.status(200).send({ statusCode: 200, message: "User found successfully", data: { id: user.id, firstName: user.firstName, lastName: user.lastName, email: user.email, tenantId: user.tenantId, role: user.role } });
         } catch (err) {
             next(err);
             return;

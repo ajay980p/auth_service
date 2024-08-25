@@ -59,10 +59,12 @@ export class TokenService {
                         const refreshTokenTable = await db.select().from(refreshTokens).where(eq(refreshTokens.userId, userId));
                         this.logger.info("Refresh Token matched ")
 
+
                         if (refreshTokenTable && refreshTokenTable[0].refreshToken === refreshTokenFromCookie) {
                             // Generate a new access token
                             const newAccessToken = await this.generateAccessToken({ id: userId });
-                            return resolve({ accessToken: newAccessToken });
+
+                            return resolve({ accessToken: newAccessToken, id: userId });
                         } else {
                             this.logger.info("Refresh token does not match or user not found");
                             return reject(new Error('Refresh token does not match or user not found'));

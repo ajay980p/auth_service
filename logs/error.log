@@ -1295,3 +1295,12 @@
 {"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:35:31.602Z"}
 {"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:35:32.986Z"}
 {"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:36:07.079Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:36:47.820Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:37:45.567Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:37:46.762Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:38:12.482Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:38:27.041Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:40:16.041Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:40:57.290Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:42:10.863Z"}
+{"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:43:18.808Z"}
