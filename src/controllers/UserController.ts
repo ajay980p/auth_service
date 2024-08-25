@@ -64,4 +64,28 @@ export class UserController {
     }
 
 
+    // To Get All Users Data
+    async getAllUserData(req: Request, res: Response, next: NextFunction) {
+
+        const result = validationResult(req);
+        if (!result.isEmpty()) {
+            const err = createHttpError(400, "Validation failed", { errors: result.array() });
+            next(err);
+            return;
+        }
+
+        this.logger.info("Retrieving all user Data : ");
+
+        try {
+            const usersData = await this.userService.getAllUserData();
+            this.logger.info("User Data fetched successfully", { data: usersData });
+
+            return res.status(200).json({ statusCode: 200, message: "User Data fetched successfully", data: usersData });
+        } catch (err) {
+            next(err);
+            return;
+        }
+    }
+
+
 }

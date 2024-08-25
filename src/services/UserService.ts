@@ -7,6 +7,7 @@ import { eq } from 'drizzle-orm';
 import bcrypt from "bcrypt";
 import { CredentialService } from "./CredentialService";
 import { refreshTokens } from "../models";
+import { formatDateOnly } from "../helpers/utility"
 
 const saltRounds = 10;
 export class UserService {
@@ -111,6 +112,27 @@ export class UserService {
             return isDeleted;
         } catch (err) {
             this.logger.error("Error while deleting user : ");
+            throw err;
+        }
+    }
+
+
+    // To Get All user Data
+    async getAllUserData() {
+        try {
+            const usersData = await db.select().from(users);
+
+            // Mask passwords in the log
+            const usersDataForLog = usersData.map(user => ({
+                ...user,
+                password: "****",
+                created_at: user.created_at ? formatDateOnly(user.created_at) : null
+            }));
+
+            this.logger.info("User Data fetched successfully", { users: usersDataForLog });
+            return usersDataForLog;
+        } catch (err) {
+            this.logger.error("Error while fetching user data: ", err);
             throw err;
         }
     }
