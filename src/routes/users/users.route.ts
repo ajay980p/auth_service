@@ -4,13 +4,14 @@ import { authenticate } from '../../middlewares/authenticate';
 import { UserController } from '../../controllers/UserController';
 import { CredentialService } from '../../services/CredentialService';
 import { UserService } from '../../services/UserService';
+import { getAllUserDataValidator } from '../../validators/user-validators';
 
 const router = express.Router();
 const credentialService = new CredentialService();
 const userService = new UserService(credentialService, logger);
 const userController = new UserController(logger, userService);
 
-router.post('/getUserList', authenticate, (req: Request, res: Response, next: NextFunction) => {
+router.post('/getUserList', authenticate, getAllUserDataValidator, (req: Request, res: Response, next: NextFunction) => {
     userController.getAllUserData(req, res, next);
 });
 

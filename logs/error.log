@@ -1335,3 +1335,18 @@
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-26T08:12:26.245Z"}
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-26T08:16:50.941Z"}
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-26T08:18:29.222Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T09:04:03.424Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T09:04:08.477Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T09:04:10.110Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T09:04:12.789Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T09:04:20.173Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T09:04:48.180Z"}
+{"level":"error","message":"Error: Tenant already exists.","service":"auth_service","timestamp":"2024-08-26T10:24:19.376Z"}
+{"level":"error","message":"Error: Tenant already exists.","service":"auth_service","timestamp":"2024-08-26T10:26:23.380Z"}
+{"level":"error","message":"Error: Tenant already exists.","service":"auth_service","timestamp":"2024-08-26T10:27:07.940Z"}
+{"level":"error","message":"Error: duplicate key value violates unique constraint \"tenants_name_unique\"","service":"auth_service","timestamp":"2024-08-26T10:27:13.375Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T10:32:46.798Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T10:32:50.149Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T10:32:51.634Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T10:32:54.139Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T10:32:58.613Z"}

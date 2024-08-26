@@ -2,17 +2,17 @@ import express, { Request, Response, NextFunction } from 'express';
 import { TenantController } from '../../controllers/TenantController';
 import { TenantService } from '../../services/TenantService';
 import logger from '../../config/logger';
-import { createTenantValidator, deleteTenantValidator, updateTenantValidator } from '../../validators/tenant-validators';
+import { createTenantValidator, deleteTenantValidator, getAllTenantsDataValidator, updateTenantValidator } from '../../validators/tenant-validators';
 import { CreateTenantRequest } from '../../types';
 import { authenticate } from '../../middlewares/authenticate';
 import { canAccess } from '../../middlewares/canAccess';
 import { Roles } from '../../constants/constant';
 const router = express.Router();
 
-const tenantService = new TenantService();
+const tenantService = new TenantService(logger);
 const tenantController = new TenantController(tenantService, logger);
 
-router.post('/create_tenants', createTenantValidator, (req: CreateTenantRequest, res: Response, next: NextFunction) => {
+router.post('/createTenant', createTenantValidator, (req: CreateTenantRequest, res: Response, next: NextFunction) => {
     tenantController.createTenant(req, res, next);
 });
 
@@ -27,7 +27,7 @@ router.post('/delete_tenant', deleteTenantValidator, (req: Request, res: Respons
 });
 
 
-router.post('/getAllTenantsList', authenticate, canAccess([Roles.ADMIN, Roles.CONSUMER]), (req: Request, res: Response, next: NextFunction) => {
+router.post('/getAllTenantsList', authenticate, getAllTenantsDataValidator, canAccess([Roles.ADMIN, Roles.CONSUMER]), (req: Request, res: Response, next: NextFunction) => {
     tenantController.getAllTenants(req, res, next);
 });
 

@@ -4,7 +4,6 @@ import createHttpError from "http-errors";
 import { validationResult } from "express-validator";
 import { UserService } from "../services/UserService";
 import { Request, Response, NextFunction } from "express";
-import { Roles } from "../constants/constant";
 
 export class UserController {
     private logger: Logger;
@@ -74,13 +73,14 @@ export class UserController {
             return;
         }
 
+        const { currentPage, pageSize } = req.body;
         this.logger.info("Retrieving all user Data : ");
 
         try {
-            const usersData = await this.userService.getAllUserData();
+            const usersData = await this.userService.getAllUserData({ currentPage, pageSize });
             this.logger.info("User Data fetched successfully", { data: usersData });
 
-            return res.status(200).json({ statusCode: 200, message: "User Data fetched successfully", data: usersData });
+            return res.status(200).json({ status: "success", statusCode: 200, message: "User Data fetched successfully", data: usersData });
         } catch (err) {
             next(err);
             return;

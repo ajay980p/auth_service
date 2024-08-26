@@ -4,7 +4,7 @@ export const createTenantValidator = checkSchema({
     name: {
         isString: true,
         errorMessage: 'Name is required',
-        notEmpty: true
+        notEmpty: true,
     },
     address: {
         isString: true,
@@ -47,6 +47,20 @@ export const deleteTenantValidator = checkSchema({
     id: {
         isNumeric: true,
         errorMessage: 'Id is required',
+        notEmpty: true
+    }
+});
+
+
+export const getAllTenantsDataValidator = checkSchema({
+    currentPage: {
+        isNumeric: true,
+        errorMessage: 'Current Page is required',
+        notEmpty: true
+    },
+    pageSize: {
+        isNumeric: true,
+        errorMessage: 'Page Size is required',
         notEmpty: true
     }
 });

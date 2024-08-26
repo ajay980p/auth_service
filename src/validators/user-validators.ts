@@ -7,3 +7,17 @@ export const deleteUserIdValidator = checkSchema({
         notEmpty: true
     }
 });
+
+
+export const getAllUserDataValidator = checkSchema({
+    currentPage: {
+        isNumeric: true,
+        errorMessage: 'Current Page is required',
+        notEmpty: true
+    },
+    pageSize: {
+        isNumeric: true,
+        errorMessage: 'Page Size is required',
+        notEmpty: true
+    }
+});

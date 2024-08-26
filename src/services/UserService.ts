@@ -3,7 +3,7 @@ import { UserData } from "../types";
 import { Logger } from "winston";
 import { errorHandler } from "../validators/err-creators";
 import { db } from "../config/data-source";
-import { eq } from 'drizzle-orm';
+import { count, eq } from 'drizzle-orm';
 import bcrypt from "bcrypt";
 import { CredentialService } from "./CredentialService";
 import { refreshTokens } from "../models";
@@ -119,9 +119,19 @@ export class UserService {
 
 
     // To Get All user Data
-    async getAllUserData() {
+    async getAllUserData({ currentPage, pageSize }: { currentPage: number, pageSize: number }) {
         try {
-            const usersData = await db.select().from(users);
+            currentPage = currentPage > 0 ? currentPage : 1;
+            pageSize = pageSize > 0 ? pageSize : 10;
+
+            const offset = (currentPage - 1) * pageSize;
+
+            // Query to count the total number of users
+            const totalRecordsResult = await db.select({ count: count() }).from(users);
+            const totalRecords = totalRecordsResult[0].count;
+
+            // Query to get paginated user data
+            const usersData = await db.select().from(users).limit(pageSize).offset(offset);
 
             // Mask passwords in the log
             const usersDataForLog = usersData.map(user => ({
@@ -131,7 +141,10 @@ export class UserService {
             }));
 
             this.logger.info("User Data fetched successfully", { users: usersDataForLog });
-            return usersDataForLog;
+
+            // Return the paginated user data along with the total number of records
+            return { totalRecords, usersData: usersDataForLog };
+
         } catch (err) {
             this.logger.error("Error while fetching user data: ", err);
             throw err;
