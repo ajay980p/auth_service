@@ -88,4 +88,29 @@ export class UserController {
     }
 
 
+    // To Get All Users Data
+    async updateUserData(req: Request, res: Response, next: NextFunction) {
+
+        const result = validationResult(req);
+        if (!result.isEmpty()) {
+            const err = createHttpError(400, "Validation failed", { errors: result.array() });
+            next(err);
+            return;
+        }
+
+        const { userId, firstName, lastName, email, role } = req.body;
+        this.logger.info("Retrieving all user Data : ");
+
+        try {
+            const usersData = await this.userService.updateUserData({ userId, firstName, lastName, email, role });
+            this.logger.info("User Data fetched successfully", { data: usersData });
+
+            return res.status(200).json({ status: "success", statusCode: 200, message: "User Data Updated successfully", data: usersData });
+        } catch (err) {
+            next(err);
+            return;
+        }
+    }
+
+
 }

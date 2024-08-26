@@ -52,3 +52,12 @@ export interface UserData {
     email: string;
     password: string;
 }
+
+
+export interface updateUserData {
+    userId: number;
+    firstName: string;
+    lastName: string;
+    email: string;
+    role: string;
+}

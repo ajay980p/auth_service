@@ -1,5 +1,5 @@
 import { users } from "../models/user/User";
-import { UserData } from "../types";
+import { updateUserData, UserData } from "../types";
 import { Logger } from "winston";
 import { errorHandler } from "../validators/err-creators";
 import { db } from "../config/data-source";
@@ -158,6 +158,27 @@ export class UserService {
 
         } catch (err) {
             this.logger.error("Error while fetching user data: ", err);
+            throw err;
+        }
+    }
+
+
+    // To Update User Data
+    async updateUserData({ userId, firstName, lastName, email, role }: updateUserData) {
+
+        // To check if user exist or not
+        const isUserExists = await this.findByUserId(userId);
+        if (!isUserExists) {
+            const err = errorHandler(400, "User doesn't exists", String(userId));
+            throw err;
+        }
+
+        try {
+            const updatedUser = await db.update(users).set({ firstName, lastName, email, role }).where(eq(users.id, userId)).returning({ id: users.id });
+            this.logger.info("User data updated successfully", { id: userId });
+            return updatedUser;
+        } catch (err) {
+            this.logger.error("Error while updating user data : ");
             throw err;
         }
     }
