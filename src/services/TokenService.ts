@@ -63,10 +63,16 @@ export class TokenService {
 
 
                         if (refreshTokenTable && refreshTokenTable[0].refreshToken === refreshTokenFromCookie) {
+
+
                             // Generate a new access token
                             const newAccessToken = await this.generateAccessToken({ id: userId });
 
-                            return resolve({ accessToken: newAccessToken, id: userId });
+                            // Decode the new access token to get the user's role
+                            const decodedToken = decode(newAccessToken) as { role: string };
+                            const userRole = decodedToken.role;
+
+                            return resolve({ accessToken: newAccessToken, id: userId, role: userRole });
                         } else {
                             this.logger.info("Refresh token does not match or user not found");
                             return reject(new Error('Refresh token does not match or user not found'));

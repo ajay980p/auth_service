@@ -1328,3 +1328,10 @@
 {"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:37:58.122Z"}
 {"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:47:06.190Z"}
 {"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:48:31.694Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:50:03.446Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:50:14.952Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:51:06.508Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:53:02.778Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-26T08:12:26.245Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-26T08:16:50.941Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-26T08:18:29.222Z"}
