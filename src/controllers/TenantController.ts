@@ -97,7 +97,7 @@ export class TenantController {
             const tenants = await this.tenantService.getAllTenants();
             this.logger.info(`All Tenants data fetched successfully`);
 
-            return res.status(200).json({ statusCode: 200, message: "All Tenants data fetched successfully", data: tenants });
+            return res.status(200).json({ status: "success", statusCode: 200, message: "All Tenants data fetched successfully", data: tenants });
         } catch (err) {
             next(err);
             return;
