@@ -1350,3 +1350,4 @@
 {"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T10:32:51.634Z"}
 {"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T10:32:54.139Z"}
 {"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T10:32:58.613Z"}
+{"level":"error","message":"Error: Converting circular structure to JSON\n    --> starting at object with constructor 'PgTable'\n    |     property 'id' -> object with constructor 'PgSerial'\n    --- property 'table' closes the circle","service":"auth_service","timestamp":"2024-08-26T11:14:10.041Z"}

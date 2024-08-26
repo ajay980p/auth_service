@@ -6,7 +6,7 @@ import { db } from "../config/data-source";
 import { count, eq } from 'drizzle-orm';
 import bcrypt from "bcrypt";
 import { CredentialService } from "./CredentialService";
-import { refreshTokens } from "../models";
+import { refreshTokens, TenantsTable } from "../models";
 import { formatDateOnly } from "../helpers/utility"
 
 const saltRounds = 10;
@@ -131,7 +131,18 @@ export class UserService {
             const totalRecords = totalRecordsResult[0].count;
 
             // Query to get paginated user data
-            const usersData = await db.select().from(users).limit(pageSize).offset(offset);
+            // const usersData = await db.select().from(users).limit(pageSize).offset(offset).leftJoin(users.tenantId, TenantsTable.id);
+
+            const usersData = await db.select({
+                userId: users.id,
+                firstName: users.firstName,
+                lastName: users.lastName,
+                email: users.email,
+                role: users.role,
+                created_at: users.created_at,
+                tenantName: TenantsTable.name,
+                tenantAddress: TenantsTable.address,
+            }).from(users).leftJoin(TenantsTable, eq(users.tenantId, TenantsTable.id))
 
             // Mask passwords in the log
             const usersDataForLog = usersData.map(user => ({
