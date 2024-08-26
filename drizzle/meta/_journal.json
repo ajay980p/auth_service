@@ -15,6 +15,13 @@
       "when": 1723035016721,
       "tag": "0001_cooing_the_fury",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1724656849829,
+      "tag": "0002_freezing_surge",
+      "breakpoints": true
     }
   ]
 }

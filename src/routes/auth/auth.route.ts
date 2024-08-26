@@ -36,12 +36,12 @@ router.post('/logout', authenticate, (req: Request, res: Response, next: NextFun
 });
 
 
-router.post('/create_user', authenticate, canAccess([Roles.ADMIN]), (req: Request, res: Response, next: NextFunction) => {
+router.post('/createUser', authenticate, canAccess([Roles.ADMIN, Roles.CONSUMER]), (req: Request, res: Response, next: NextFunction) => {
     userController.createUser(req, res, next);
 });
 
 
-router.post('/delete_user', authenticate, canAccess([Roles.ADMIN, Roles.CONSUMER]), deleteUserIdValidator, (req: Request, res: Response, next: NextFunction) => {
+router.post('/deleteUser', authenticate, canAccess([Roles.ADMIN, Roles.CONSUMER]), deleteUserIdValidator, (req: Request, res: Response, next: NextFunction) => {
     userController.deleteUserById(req, res, next);
 });
 

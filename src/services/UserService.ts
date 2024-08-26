@@ -25,6 +25,7 @@ export class UserService {
         const user = await this.findByEmail(email);
         if (user) {
             const err = errorHandler(400, "Email already exists.", email);
+            console.log("Error i am getting here is : ", err)
             throw err;
         }
 

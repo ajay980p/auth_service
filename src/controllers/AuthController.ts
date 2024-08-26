@@ -55,7 +55,7 @@ export class AuthController {
             res.cookie("accessToken", accessToken, { httpOnly: true, secure: true, sameSite: "strict" });
             res.cookie("refreshToken", refreshToken, { httpOnly: true, secure: true, sameSite: "strict" });
 
-            return res.status(201).json({ statusCode: 201, message: "User created successfully", user });
+            return res.status(201).json({ status: "success", statusCode: 201, message: "User created successfully", user });
         } catch (error) {
             next(error);
             return;

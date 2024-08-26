@@ -59,6 +59,8 @@ export class TokenService {
                         const refreshTokenTable = await db.select().from(refreshTokens).where(eq(refreshTokens.userId, userId));
                         this.logger.info("Refresh Token matched ")
 
+                        console.log("Refreshtoken Table : ", refreshTokenTable)
+
 
                         if (refreshTokenTable && refreshTokenTable[0].refreshToken === refreshTokenFromCookie) {
                             // Generate a new access token

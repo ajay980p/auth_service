@@ -1306,3 +1306,25 @@
 {"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T19:43:18.808Z"}
 {"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T21:51:05.446Z"}
 {"level":"error","message":"Error: UNDEFINED_VALUE: Undefined values are not allowed","service":"auth_service","timestamp":"2024-08-25T21:51:21.960Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-26T06:41:16.644Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-26T06:42:10.589Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-26T06:48:56.885Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-26T06:51:33.073Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-26T06:56:05.886Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-26T06:57:05.474Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:03:53.873Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:04:04.786Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-26T07:05:12.199Z"}
+{"level":"error","message":"Error while creating user : ","service":"auth_service","timestamp":"2024-08-26T07:17:22.793Z"}
+{"level":"error","message":"Error: duplicate key value violates unique constraint \"users_firstName_unique\"","service":"auth_service","timestamp":"2024-08-26T07:17:22.794Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:24:54.628Z"}
+{"level":"error","message":"Error while creating user : ","service":"auth_service","timestamp":"2024-08-26T07:32:11.288Z"}
+{"level":"error","message":"Error: null value in column \"role\" of relation \"users\" violates not-null constraint","service":"auth_service","timestamp":"2024-08-26T07:32:11.289Z"}
+{"level":"error","message":"Error while creating user : ","service":"auth_service","timestamp":"2024-08-26T07:32:47.408Z"}
+{"level":"error","message":"Error: null value in column \"role\" of relation \"users\" violates not-null constraint","service":"auth_service","timestamp":"2024-08-26T07:32:47.409Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:33:42.971Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:35:49.668Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:36:13.884Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:37:58.122Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:47:06.190Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-26T07:48:31.694Z"}

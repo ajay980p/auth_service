@@ -5,7 +5,7 @@ import { TenantsTable } from "../tenants/tenants";
 // Define the User table
 export const users = pgTable("users", {
     id: serial("id").primaryKey(),
-    firstName: varchar("firstName", { length: 100 }).unique().notNull(),
+    firstName: varchar("firstName", { length: 100 }).notNull(),
     lastName: varchar("lastName", { length: 100 }).notNull(),
     email: varchar("email", { length: 100 }).unique().notNull(),
     password: varchar("password", { length: 100 }).notNull(),

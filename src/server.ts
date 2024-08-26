@@ -34,7 +34,7 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 
     logger.error(`Error: ${err.message}`);
 
-    return res.send({
+    return res.status(statusCode).send({
         success: false,
         statusCode: statusCode,
         // type: err.name,
