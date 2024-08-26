@@ -2,23 +2,39 @@ import { checkSchema } from "express-validator";
 
 export const deleteUserIdValidator = checkSchema({
     userId: {
-        isNumeric: true,
-        errorMessage: 'User Id is required',
-        notEmpty: true
-    }
+        in: ['body'],
+        isNumeric: {
+            errorMessage: 'User Id must be a number',
+        },
+        notEmpty: {
+            errorMessage: 'User Id is required',
+        },
+    },
 });
 
 
 export const getAllUserDataValidator = checkSchema({
     currentPage: {
-        isNumeric: true,
-        errorMessage: 'Current Page is required',
-        notEmpty: true
+        in: ['body'],
+        isInt: {
+            options: { min: 1 },
+            errorMessage: 'Current Page must be a positive integer',
+        },
+        notEmpty: {
+            errorMessage: 'Current Page is required',
+        },
+        toInt: true,
     },
     pageSize: {
-        isNumeric: true,
-        errorMessage: 'Page Size is required',
-        notEmpty: true
+        in: ['body'],
+        isInt: {
+            options: { min: 1 },
+            errorMessage: 'Page Size must be a positive integer',
+        },
+        notEmpty: {
+            errorMessage: 'Page Size is required',
+        },
+        toInt: true,
     }
 });
 

@@ -2,25 +2,49 @@ import { checkSchema } from "express-validator";
 
 export default checkSchema({
     firstName: {
-        isString: true,
-        errorMessage: 'First name is required',
-        notEmpty: true
+        in: ['body'],
+        isString: {
+            errorMessage: 'First name must be a string',
+        },
+        notEmpty: {
+            errorMessage: 'First name is required',
+        },
+        trim: true,
+        escape: true,
     },
     lastName: {
-        isString: true,
-        errorMessage: 'Last name is required',
-        notEmpty: true
+        in: ['body'],
+        isString: {
+            errorMessage: 'Last name must be a string',
+        },
+        notEmpty: {
+            errorMessage: 'Last name is required',
+        },
+        trim: true,
+        escape: true,
     },
     email: {
-        errorMessage: 'Email is required',
-        notEmpty: true,
-        isEmail: true
+        in: ['body'],
+        notEmpty: {
+            errorMessage: 'Email is required',
+        },
+        isEmail: {
+            errorMessage: 'Invalid email format',
+        },
+        normalizeEmail: true,
     },
     password: {
+        in: ['body'],
+        notEmpty: {
+            errorMessage: 'Password is required',
+        },
         isLength: {
             options: { min: 8 },
-            errorMessage: 'Password should be at least 8 chars',
+            errorMessage: 'Password should be at least 8 characters long',
         },
-        notEmpty: true
+        matches: {
+            options: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+            errorMessage: 'Password must contain at least one uppercase letter, one lowercase letter, and one number',
+        },
     },
 });

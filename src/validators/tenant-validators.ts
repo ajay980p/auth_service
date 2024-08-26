@@ -2,65 +2,112 @@ import { checkSchema } from "express-validator";
 
 export const createTenantValidator = checkSchema({
     name: {
-        isString: true,
-        errorMessage: 'Name is required',
-        notEmpty: true,
+        in: ['body'],
+        isString: {
+            errorMessage: 'Name must be a string',
+        },
+        notEmpty: {
+            errorMessage: 'Name is required',
+        },
+        trim: true,
+        escape: true,
     },
     address: {
-        isString: true,
-        errorMessage: 'Address is required',
-        notEmpty: true
+        in: ['body'],
+        isString: {
+            errorMessage: 'Address must be a string',
+        },
+        notEmpty: {
+            errorMessage: 'Address is required',
+        },
+        trim: true,
+        escape: true,
     },
     mailId: {
-        isEmail: true,
-        errorMessage: 'MailId is required',
-        notEmpty: true
+        in: ['body'],
+        notEmpty: {
+            errorMessage: 'MailId is required',
+        },
+        isEmail: {
+            errorMessage: 'Invalid email format',
+        },
+        normalizeEmail: true,
     }
 });
-
 
 export const updateTenantValidator = checkSchema({
     id: {
-        isNumeric: true,
-        errorMessage: 'Id is required',
-        notEmpty: true
+        in: ['body'],
+        isInt: {
+            errorMessage: 'Id must be an integer',
+        },
+        notEmpty: {
+            errorMessage: 'Id is required',
+        },
+        toInt: true,
     },
     name: {
-        isString: true,
-        errorMessage: 'Name is required',
-        notEmpty: false
+        in: ['body'],
+        optional: true,
+        isString: {
+            errorMessage: 'Name must be a string',
+        },
+        trim: true,
+        escape: true,
     },
     address: {
-        isString: true,
-        errorMessage: 'Address is required',
-        notEmpty: false
+        in: ['body'],
+        optional: true,
+        isString: {
+            errorMessage: 'Address must be a string',
+        },
+        trim: true,
+        escape: true,
     },
     mailId: {
-        isEmail: true,
-        errorMessage: 'MailId is required',
-        notEmpty: false
+        in: ['body'],
+        optional: true,
+        isEmail: {
+            errorMessage: 'Invalid email format',
+        },
+        normalizeEmail: true,
     }
 });
-
 
 export const deleteTenantValidator = checkSchema({
     id: {
-        isNumeric: true,
-        errorMessage: 'Id is required',
-        notEmpty: true
+        in: ['body'],
+        isInt: {
+            errorMessage: 'Id must be an integer',
+        },
+        notEmpty: {
+            errorMessage: 'Id is required',
+        },
+        toInt: true,
     }
 });
 
-
 export const getAllTenantsDataValidator = checkSchema({
     currentPage: {
-        isNumeric: true,
-        errorMessage: 'Current Page is required',
-        notEmpty: true
+        in: ['query'],
+        isInt: {
+            options: { min: 1 },
+            errorMessage: 'Current Page must be a positive integer',
+        },
+        notEmpty: {
+            errorMessage: 'Current Page is required',
+        },
+        toInt: true,
     },
     pageSize: {
-        isNumeric: true,
-        errorMessage: 'Page Size is required',
-        notEmpty: true
+        in: ['query'],
+        isInt: {
+            options: { min: 1, max: 100 },
+            errorMessage: 'Page Size must be a positive integer',
+        },
+        notEmpty: {
+            errorMessage: 'Page Size is required',
+        },
+        toInt: true,
     }
 });
