@@ -10,7 +10,7 @@ import { authenticate } from '../../middlewares/authenticate';
 import { UserController } from '../../controllers/UserController';
 import { canAccess } from '../../middlewares/canAccess';
 import { Roles } from '../../constants/constant';
-import { deleteUserIdValidator } from '../../validators/user-validators';
+import { createUserDataValidator, deleteUserIdValidator } from '../../validators/user-validators';
 
 const router = express.Router();
 const credentialService = new CredentialService();
@@ -36,7 +36,7 @@ router.post('/logout', authenticate, (req: Request, res: Response, next: NextFun
 });
 
 
-router.post('/createUser', authenticate, canAccess([Roles.ADMIN, Roles.CONSUMER]), (req: Request, res: Response, next: NextFunction) => {
+router.post('/createUser', authenticate, createUserDataValidator, canAccess([Roles.ADMIN, Roles.CONSUMER]), (req: Request, res: Response, next: NextFunction) => {
     userController.createUser(req, res, next);
 });
 

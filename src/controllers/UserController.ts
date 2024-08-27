@@ -23,11 +23,11 @@ export class UserController {
             return;
         }
 
-        const { firstName, lastName, email, password, role } = req.body as UserData;
+        const { firstName, lastName, email, password, role, tenantId } = req.body as UserData;
         this.logger.info("Registering user through Tenant : ", { firstName, lastName, email, role: role });
 
         try {
-            const user = await this.userService.createUser({ firstName, lastName, email, password, role: role });
+            const user = await this.userService.createUser({ firstName, lastName, email, password, role, tenantId });
             this.logger.info("User created successfully", { firstName, lastName, email, role: role });
 
             return res.status(201).json({ status: "success", statusCode: 201, message: "User created successfully", user });

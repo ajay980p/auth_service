@@ -35,12 +35,12 @@ export class AuthController {
             return;
         }
 
-        const { firstName, lastName, email, password } = req.body;
-        this.logger.info("Registering user : ", { firstName, lastName, email, role: Roles.CONSUMER });
+        const { firstName, lastName, email, password, tenantId } = req.body;
+        this.logger.info("Registering user : ", { firstName, lastName, email, role: Roles.CONSUMER, tenantId });
 
         try {
             // Creating a User into the Database
-            const user = await this.userService.createUser({ firstName, lastName, email, password, role: Roles.CONSUMER });
+            const user = await this.userService.createUser({ firstName, lastName, email, password, role: Roles.CONSUMER, tenantId });
 
             // Generating Access Token
             const payload: JwtPayload = { id: user.id, firstName, lastName, email, role: Roles.CONSUMER }

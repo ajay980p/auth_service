@@ -39,7 +39,7 @@ export class UserService {
     }
 
     // To Register User
-    async createUser({ firstName, lastName, email, password, role }: UserData) {
+    async createUser({ firstName, lastName, email, password, role, tenantId }: UserData) {
 
         const user = await this.findByEmail(email);
         if (user) {
@@ -53,7 +53,7 @@ export class UserService {
             const salt = await bcrypt.genSalt(saltRounds);
             const hashPassword = await bcrypt.hash(password, salt);
 
-            const insertedUser = await db.insert(users).values({ firstName, lastName, email, password: hashPassword, role }).returning({ id: users.id });
+            const insertedUser = await db.insert(users).values({ firstName, lastName, email, password: hashPassword, role, tenantId }).returning({ id: users.id });
             this.logger.info("User created successfully", { id: users.id });
             return insertedUser[0];
         } catch (err) {
