@@ -108,9 +108,18 @@ export const createUserDataValidator = checkSchema({
         isNumeric: {
             errorMessage: 'Tenant Id must be a number',
         },
-        notEmpty: {
-            errorMessage: 'Tenant Id is required',
+        custom: {
+            options: (value: string, { req }) => {
+                if (req.body.role === 'admin') {
+                    if (!value) {
+                        throw new Error('Tenant Id is required for admin role');
+                    }
+                    return true;
+                }
+                return true;
+            },
         },
+        optional: true,
     },
 });
 

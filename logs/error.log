@@ -1386,3 +1386,8 @@
 {"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-27T06:35:14.539Z"}
 {"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-27T06:35:19.037Z"}
 {"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-27T06:35:54.468Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-27T10:48:50.006Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-27T10:57:08.591Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-27T10:57:13.772Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-27T10:57:17.732Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-27T15:53:41.089Z"}
