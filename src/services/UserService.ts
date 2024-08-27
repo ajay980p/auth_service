@@ -3,13 +3,32 @@ import { updateUserData, UserData } from "../types";
 import { Logger } from "winston";
 import { errorHandler } from "../validators/err-creators";
 import { db } from "../config/data-source";
-import { count, eq } from 'drizzle-orm';
+import { and, count, eq, ilike, or } from 'drizzle-orm';
 import bcrypt from "bcrypt";
 import { CredentialService } from "./CredentialService";
 import { refreshTokens, TenantsTable } from "../models";
 import { formatDateOnly } from "../helpers/utility"
 
 const saltRounds = 10;
+
+interface searchUserData {
+    currentPage: number,
+    pageSize: number,
+    search: string,
+    searchRole: string
+
+}
+interface modifiedUserData {
+    userId: number | string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    role: string;
+    created_at: Date | null;
+    tenantName: string | null;
+    tenantAddress: string | null;
+    [key: string]: any;
+}
 export class UserService {
     private logger: Logger;
     private credentialService: CredentialService;
@@ -119,21 +138,15 @@ export class UserService {
 
 
     // To Get All user Data
-    async getAllUserData({ currentPage, pageSize }: { currentPage: number, pageSize: number }) {
+    async getAllUserData({ currentPage, pageSize, search, searchRole }: searchUserData) {
         try {
             currentPage = currentPage > 0 ? currentPage : 1;
             pageSize = pageSize > 0 ? pageSize : 10;
 
             const offset = (currentPage - 1) * pageSize;
 
-            // Query to count the total number of users
-            const totalRecordsResult = await db.select({ count: count() }).from(users);
-            const totalRecords = totalRecordsResult[0].count;
-
-            // Query to get paginated user data
-            // const usersData = await db.select().from(users).limit(pageSize).offset(offset).leftJoin(users.tenantId, TenantsTable.id);
-
-            const usersData = await db.select({
+            // Initialize the base query
+            let query = db.select({
                 userId: users.id,
                 firstName: users.firstName,
                 lastName: users.lastName,
@@ -142,13 +155,38 @@ export class UserService {
                 created_at: users.created_at,
                 tenantName: TenantsTable.name,
                 tenantAddress: TenantsTable.address,
-            }).from(users).leftJoin(TenantsTable, eq(users.tenantId, TenantsTable.id))
+            }).from(users)
+                .leftJoin(TenantsTable, eq(users.tenantId, TenantsTable.id))
+                .limit(pageSize)
+                .offset(offset) as any;
 
-            // Mask passwords in the log
-            const usersDataForLog = usersData.map(user => ({
+            // Build WHERE conditions if search parameters are provided
+            if (search || searchRole) {
+                query = query.where(and(
+                    search ? or(
+                        ilike(users.firstName, `%${search}%`),
+                        ilike(users.lastName, `%${search}%`),
+                        ilike(users.email, `%${search}%`)
+                    ) : undefined,
+                    searchRole ? ilike(users.role, `%${searchRole}%`) : undefined
+                ));
+            }
+
+            // Execute the query to fetch the user data
+            const usersData = await query;
+
+            // Count total records (consider caching or optimizing this if slow)
+            const totalRecordsResult = await db
+                .select({ count: count() })
+                .from(users)
+                .leftJoin(TenantsTable, eq(users.tenantId, TenantsTable.id));
+            const totalRecords = totalRecordsResult[0].count;
+
+            // Prepare data for logging (mask sensitive info)
+            const usersDataForLog = usersData.map((user: modifiedUserData) => ({
                 ...user,
                 password: "****",
-                created_at: user.created_at ? formatDateOnly(user.created_at) : null
+                created_at: user.created_at ? formatDateOnly(user.created_at) : null,
             }));
 
             this.logger.info("User Data fetched successfully", { users: usersDataForLog });
@@ -161,6 +199,7 @@ export class UserService {
             throw err;
         }
     }
+
 
 
     // To Update User Data

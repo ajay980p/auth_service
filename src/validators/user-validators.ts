@@ -35,6 +35,24 @@ export const getAllUserDataValidator = checkSchema({
             errorMessage: 'Page Size is required',
         },
         toInt: true,
+    },
+    search: {
+        in: ['body'],
+        optional: true,
+        isString: {
+            errorMessage: 'Search must be a string',
+        },
+        trim: true,
+        escape: true,
+    },
+    searchRole: {
+        in: ['body'],
+        optional: true,
+        isString: {
+            errorMessage: 'Search Role must be a string',
+        },
+        trim: true,
+        escape: true,
     }
 });
 

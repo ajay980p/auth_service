@@ -89,7 +89,7 @@ export const deleteTenantValidator = checkSchema({
 
 export const getAllTenantsDataValidator = checkSchema({
     currentPage: {
-        in: ['query'],
+        in: ['body'],
         isInt: {
             options: { min: 1 },
             errorMessage: 'Current Page must be a positive integer',
@@ -100,7 +100,7 @@ export const getAllTenantsDataValidator = checkSchema({
         toInt: true,
     },
     pageSize: {
-        in: ['query'],
+        in: ['body'],
         isInt: {
             options: { min: 1, max: 100 },
             errorMessage: 'Page Size must be a positive integer',
@@ -109,5 +109,6 @@ export const getAllTenantsDataValidator = checkSchema({
             errorMessage: 'Page Size is required',
         },
         toInt: true,
-    }
+    },
+
 });

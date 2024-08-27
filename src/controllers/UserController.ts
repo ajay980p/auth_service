@@ -68,16 +68,16 @@ export class UserController {
 
         const result = validationResult(req);
         if (!result.isEmpty()) {
-            const err = createHttpError(400, "Validation failed", { errors: result.array() });
+            const err = createHttpError(400, "Validation failed", { errors: result.array()[0] });
             next(err);
             return;
         }
 
-        const { currentPage, pageSize } = req.body;
+        const { currentPage, pageSize, search, searchRole } = req.body;
         this.logger.info("Retrieving all user Data : ");
 
         try {
-            const usersData = await this.userService.getAllUserData({ currentPage, pageSize });
+            const usersData = await this.userService.getAllUserData({ currentPage, pageSize, search, searchRole });
             this.logger.info("User Data fetched successfully", { data: usersData });
 
             return res.status(200).json({ status: "success", statusCode: 200, message: "User Data fetched successfully", data: usersData });
