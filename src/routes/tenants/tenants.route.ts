@@ -27,7 +27,7 @@ router.post('/delete_tenant', deleteTenantValidator, (req: Request, res: Respons
 });
 
 
-router.post('/getAllTenantsList', authenticate, getAllTenantsDataValidator, canAccess([Roles.ADMIN, Roles.CONSUMER]), (req: Request, res: Response, next: NextFunction) => {
+router.post('/getAllTenantsList', authenticate, getAllTenantsDataValidator, canAccess([Roles.ADMIN, Roles.MANAGER]), (req: Request, res: Response, next: NextFunction) => {
     tenantController.getAllTenants(req, res, next);
 });
 
