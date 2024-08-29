@@ -13,7 +13,7 @@ const credentialService = new CredentialService();
 const userService = new UserService(credentialService, logger);
 const userController = new UserController(logger, userService);
 
-router.post('/getUserList', authenticate, getAllUserDataValidator, canAccess([Roles.ADMIN, Roles.CONSUMER]), (req: Request, res: Response, next: NextFunction) => {
+router.post('/getUserList', authenticate, getAllUserDataValidator, (req: Request, res: Response, next: NextFunction) => {
     userController.getAllUserData(req, res, next);
 });
 

@@ -89,7 +89,7 @@ export class TokenService {
             if (!decodedToken || !decodedToken.role) {
                 throw new Error('New access token is invalid or missing role.');
             }
-            return { accessToken: newAccessToken, id: userId, role: decodedToken.role };
+            return { id: userId, role: decodedToken.role };
         } else {
             throw new Error('Refresh token does not match or user not found');
         }

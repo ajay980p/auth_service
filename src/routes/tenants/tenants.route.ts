@@ -12,17 +12,17 @@ const router = express.Router();
 const tenantService = new TenantService(logger);
 const tenantController = new TenantController(tenantService, logger);
 
-router.post('/createTenant', createTenantValidator, (req: CreateTenantRequest, res: Response, next: NextFunction) => {
+router.post('/createTenant', authenticate, createTenantValidator, (req: CreateTenantRequest, res: Response, next: NextFunction) => {
     tenantController.createTenant(req, res, next);
 });
 
 
-router.post('/update_tenants', updateTenantValidator, (req: CreateTenantRequest, res: Response, next: NextFunction) => {
+router.post('/update_tenants', authenticate, updateTenantValidator, (req: CreateTenantRequest, res: Response, next: NextFunction) => {
     tenantController.updateTenant(req, res, next);
 });
 
 
-router.post('/delete_tenant', deleteTenantValidator, (req: Request, res: Response, next: NextFunction) => {
+router.post('/delete_tenant', authenticate, deleteTenantValidator, (req: Request, res: Response, next: NextFunction) => {
     tenantController.deleteTenant(req, res, next);
 });
 
