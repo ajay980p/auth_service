@@ -18,13 +18,10 @@ const tokenService = new TokenService(logger);
 
 // Authentication middleware
 export const authenticate = async (req: AuthRequest, res: Response, next: NextFunction) => {
-    const authHeader = req.headers.authorization;
     let accessToken: string | undefined;
     let refreshToken: string | undefined;
 
-    if (authHeader && authHeader.startsWith("Bearer ")) {
-        // token = authHeader.split(" ")[1];
-    } else if (req.cookies) {
+    if (req.cookies) {
         accessToken = (req.cookies as AuthCookie).accessToken;
         refreshToken = (req.cookies as AuthCookie).refreshToken;
     }
@@ -34,7 +31,7 @@ export const authenticate = async (req: AuthRequest, res: Response, next: NextFu
     }
 
     try {
-        const decoded = await tokenService.verifyAccessToken(accessToken, refreshToken);
+        const decoded = await tokenService.verifyToken(accessToken, refreshToken);
         req.auth = decoded as any;
         next();
     } catch (err) {

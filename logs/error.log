@@ -1419,3 +1419,41 @@
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:19:55.434Z"}
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:19:58.020Z"}
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:20:02.469Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:26:15.115Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:26:16.713Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:26:19.751Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:26:24.808Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:26:54.621Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:26:56.368Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:26:58.831Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:27:04.012Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:27:19.814Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:27:27.529Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:27:34.535Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:27:37.225Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:27:56.494Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:28:00.969Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:28:47.111Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:29:07.893Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:29:10.339Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T17:29:23.079Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-28T18:48:37.502Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T04:54:26.608Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T05:25:43.409Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T05:25:44.850Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T05:25:47.327Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T05:25:51.757Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T05:47:35.674Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T05:47:37.110Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T05:49:45.398Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T05:59:06.413Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T06:14:29.938Z"}
+{"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T06:24:37.976Z"}
+{"level":"error","message":"Error: Validation failed","service":"auth_service","timestamp":"2024-08-29T11:40:18.276Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-29T11:40:29.124Z"}
+{"level":"error","message":"Error while creating user : ","service":"auth_service","timestamp":"2024-08-29T11:40:35.652Z"}
+{"level":"error","message":"Error: insert or update on table \"users\" violates foreign key constraint \"users_tenantId_tenants_id_fk\"","service":"auth_service","timestamp":"2024-08-29T11:40:35.653Z"}
+{"level":"error","message":"Error: secretOrPrivateKey must be a symmetric key when using HS256","service":"auth_service","timestamp":"2024-08-29T11:41:38.609Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-29T11:52:29.527Z"}
+{"level":"error","message":"Error: secretOrPrivateKey must be a symmetric key when using HS256","service":"auth_service","timestamp":"2024-08-29T11:52:39.191Z"}
+{"level":"error","message":"Error: secretOrPrivateKey must be an asymmetric key when using RS256","service":"auth_service","timestamp":"2024-08-29T11:53:28.243Z"}

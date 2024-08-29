@@ -12,13 +12,13 @@ import { Config } from "../config";
 export class TokenService {
     private logger: Logger;
     private privateKey: Buffer;
-    // private publicKey: Buffer;
+    private publicKey: Buffer;
 
     constructor(logger: Logger) {
         this.logger = logger;
         try {
             this.privateKey = fs.readFileSync(path.join(__dirname, '../../certs/private.pem'));
-            // this.publicKey = fs.readFileSync(path.join(__dirname, '../../certs/public.pem'));
+            this.publicKey = fs.readFileSync(path.join(__dirname, '../../certs/public.pem'));
         } catch (err) {
             const error = errorHandler(500, "Error while reading key files.", "key");
             throw error;
@@ -31,7 +31,7 @@ export class TokenService {
     }
 
     async generateRefreshToken(payload: JwtPayload) {
-        const refreshToken = sign(payload, "privateKey", { algorithm: "HS256", expiresIn: Config.REFRESH_TOKEN_EXPIRE, issuer: "auth-service", jwtid: String(payload.id) });
+        const refreshToken = sign(payload, this.privateKey, { algorithm: "HS256", expiresIn: Config.REFRESH_TOKEN_EXPIRE, issuer: "auth-service", jwtid: String(payload.id) });
         return refreshToken;
     }
 
@@ -45,56 +45,61 @@ export class TokenService {
         }
     }
 
-    async verifyAccessToken(accessTokenFromCookie: string, refreshTokenFromCookie: string) {
-        return new Promise(async (resolve, reject) => {
-            verify(accessTokenFromCookie, this.privateKey, { algorithms: ["RS256"] }, async (err, decoded) => {
-                if (err && err.name === 'TokenExpiredError') {
-                    // Decode the expired token to get the user ID
-                    const decodedExpiredToken = decode(accessTokenFromCookie) as { id: number };
-                    const userId = decodedExpiredToken.id;
-                    this.logger.info("User id matched during decode : ", { userId })
+    async verifyToken(accessTokenFromCookie: string, refreshTokenFromCookie: string): Promise<JwtPayload> {
+        try {
+            const decoded = await this.verifyAccessToken(accessTokenFromCookie);
+            this.logger.info("Access token verified.");
+            return Promise.resolve(decoded as unknown as { accessToken: string, id: number, role: string });
+        } catch (error: any) {
+            if (error.name === 'TokenExpiredError') {
+                return this.handleExpiredToken(accessTokenFromCookie, refreshTokenFromCookie);
+            } else {
+                this.logger.error("Error verifying access token:", error);
+                throw error;
+            }
+        }
+    }
 
-                    try {
-                        // Fetch the refresh token from the database using the user ID
-                        const refreshTokenTable = await db.select().from(refreshTokens).where(eq(refreshTokens.userId, userId));
-                        this.logger.info("Refresh Token matched ")
+    async handleExpiredToken(accessTokenFromCookie: string, refreshTokenFromCookie: string): Promise<JwtPayload> {
+        const decodedExpiredToken = decode(accessTokenFromCookie) as JwtPayload | null;
+        if (!decodedExpiredToken || !decodedExpiredToken.id) {
+            this.logger.info("Expired token is invalid or missing ID.");
+            throw new Error('Expired token is invalid or missing ID.');
+        }
 
-                        console.log("Refreshtoken Table : ", refreshTokenTable)
+        const userId = decodedExpiredToken.id;
+        this.logger.info("User id matched during decode:", { userId });
 
+        const refreshTokenTable = await db.select().from(refreshTokens).where(eq(refreshTokens.userId, userId));
+        this.logger.info("Refresh Token matched");
 
-                        if (refreshTokenTable && refreshTokenTable[0].refreshToken === refreshTokenFromCookie) {
+        if (refreshTokenTable.length > 0 && refreshTokenTable[0].refreshToken === refreshTokenFromCookie) {
+            const newAccessToken = await this.generateAccessToken({ id: userId });
+            const decodedToken = decode(newAccessToken) as JwtPayload;
+            if (!decodedToken || !decodedToken.role) {
+                throw new Error('New access token is invalid or missing role.');
+            }
+            return { accessToken: newAccessToken, id: userId, role: decodedToken.role };
+        } else {
+            throw new Error('Refresh token does not match or user not found');
+        }
+    }
 
-
-                            // Generate a new access token
-                            const newAccessToken = await this.generateAccessToken({ id: userId });
-
-                            // Decode the new access token to get the user's role
-                            const decodedToken = decode(newAccessToken) as { role: string };
-                            const userRole = decodedToken.role;
-
-                            return resolve({ accessToken: newAccessToken, id: userId, role: userRole });
-                        } else {
-                            this.logger.info("Refresh token does not match or user not found");
-                            return reject(new Error('Refresh token does not match or user not found'));
-                        }
-                    } catch (err) {
-                        this.logger.info("Error getting while verifying the token")
-                        return reject(err);
-                    }
-                } else if (err) {
-                    this.logger.info("Token not found.")
+    async verifyAccessToken(accessToken: string): Promise<JwtPayload | undefined> {
+        return new Promise((resolve, reject) => {
+            verify(accessToken, this.publicKey, { algorithms: ["RS256"] }, (err, decoded) => {
+                if (err) {
+                    this.logger.info("Error verifying access token:", err);
                     return reject(err);
-                } else {
-                    this.logger.info("Access token verified.")
-                    resolve(decoded);
                 }
+                resolve(decoded as JwtPayload);
             });
         });
     }
 
     async verifyRefreshToken(token: string) {
         return new Promise((resolve, reject) => {
-            verify(token, "privateKey", { algorithms: ["HS256"] }, (err, decoded) => {
+            verify(token, this.privateKey, { algorithms: ["HS256"] }, (err, decoded) => {
                 if (err) {
                     return reject(err);
                 }
