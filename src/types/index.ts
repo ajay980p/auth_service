@@ -62,3 +62,12 @@ export interface updateUserData {
     email: string;
     role: string;
 }
+
+
+export interface JwtPayload {
+    id: number;
+    firstName: string;
+    lastName: string;
+    email: string;
+    role: string;
+}

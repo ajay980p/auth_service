@@ -1457,3 +1457,10 @@
 {"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-29T11:52:29.527Z"}
 {"level":"error","message":"Error: secretOrPrivateKey must be a symmetric key when using HS256","service":"auth_service","timestamp":"2024-08-29T11:52:39.191Z"}
 {"level":"error","message":"Error: secretOrPrivateKey must be an asymmetric key when using RS256","service":"auth_service","timestamp":"2024-08-29T11:53:28.243Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-08-29T18:18:30.098Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-08-29T18:19:15.129Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-08-29T18:19:15.130Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-08-29T18:19:21.060Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-08-29T18:19:21.060Z"}
+{"level":"error","message":"Error while User Login : ","service":"auth_service","timestamp":"2024-08-29T18:20:34.807Z"}
+{"level":"error","message":"Error: Email or Password doesn't exists","service":"auth_service","timestamp":"2024-08-29T18:20:34.807Z"}

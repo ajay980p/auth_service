@@ -1,13 +1,14 @@
 import fs from "fs";
 import path from "path";
-import { decode, JwtPayload, sign, verify } from "jsonwebtoken";
+import { decode, sign, verify } from "jsonwebtoken";
 import { errorHandler } from "../validators/err-creators";
 import { Logger } from "winston";
 import { db } from "../config/data-source";
-import { refreshTokens } from "../models";
-import { refreshTokenPayload } from "../types";
+import { refreshTokens, users } from "../models";
+import { JwtPayload, refreshTokenPayload } from "../types";
 import { eq } from "drizzle-orm";
 import { Config } from "../config";
+import { createJwtPayload } from "../controllers/createJwtPayload";
 
 export class TokenService {
     private logger: Logger;
@@ -25,15 +26,18 @@ export class TokenService {
         }
     }
 
+
     async generateAccessToken(payload: JwtPayload) {
         const accessToken = sign(payload, this.privateKey, { algorithm: "RS256", expiresIn: Config.ACCESS_TOKEN_EXPIRE, issuer: "auth-service" });
         return accessToken;
     }
 
+
     async generateRefreshToken(payload: JwtPayload) {
-        const refreshToken = sign(payload, this.privateKey, { algorithm: "HS256", expiresIn: Config.REFRESH_TOKEN_EXPIRE, issuer: "auth-service", jwtid: String(payload.id) });
+        const refreshToken = sign(payload, "ILKQmtYNWqkaMSij0bwKmQwbRzIH6ARrDi8e2Xmkrv4", { algorithm: "HS256", expiresIn: Config.REFRESH_TOKEN_EXPIRE, issuer: "auth-service", jwtid: String(payload.id) });
         return refreshToken;
     }
+
 
     async persistRefreshToken({ userId, refreshToken }: refreshTokenPayload) {
         const expiresAt = new Date(Date.now() + 1000 * 60 * 60 * 24 * 365);
@@ -45,7 +49,8 @@ export class TokenService {
         }
     }
 
-    async verifyToken(accessTokenFromCookie: string, refreshTokenFromCookie: string): Promise<JwtPayload> {
+
+    async verifyToken(accessTokenFromCookie: string, refreshTokenFromCookie: string) {
         try {
             const decoded = await this.verifyAccessToken(accessTokenFromCookie);
             this.logger.info("Access token verified.");
@@ -60,7 +65,8 @@ export class TokenService {
         }
     }
 
-    async handleExpiredToken(accessTokenFromCookie: string, refreshTokenFromCookie: string): Promise<JwtPayload> {
+
+    async handleExpiredToken(accessTokenFromCookie: string, refreshTokenFromCookie: string) {
         const decodedExpiredToken = decode(accessTokenFromCookie) as JwtPayload | null;
         if (!decodedExpiredToken || !decodedExpiredToken.id) {
             this.logger.info("Expired token is invalid or missing ID.");
@@ -74,7 +80,11 @@ export class TokenService {
         this.logger.info("Refresh Token matched");
 
         if (refreshTokenTable.length > 0 && refreshTokenTable[0].refreshToken === refreshTokenFromCookie) {
-            const newAccessToken = await this.generateAccessToken({ id: userId });
+
+            const user = await db.select().from(users).where(eq(users.id, userId));
+
+            const payload = createJwtPayload(user);
+            const newAccessToken = await this.generateAccessToken(payload);
             const decodedToken = decode(newAccessToken) as JwtPayload;
             if (!decodedToken || !decodedToken.role) {
                 throw new Error('New access token is invalid or missing role.');
@@ -84,6 +94,7 @@ export class TokenService {
             throw new Error('Refresh token does not match or user not found');
         }
     }
+
 
     async verifyAccessToken(accessToken: string): Promise<JwtPayload | undefined> {
         return new Promise((resolve, reject) => {
@@ -97,9 +108,10 @@ export class TokenService {
         });
     }
 
+
     async verifyRefreshToken(token: string) {
         return new Promise((resolve, reject) => {
-            verify(token, this.privateKey, { algorithms: ["HS256"] }, (err, decoded) => {
+            verify(token, "ILKQmtYNWqkaMSij0bwKmQwbRzIH6ARrDi8e2Xmkrv4", { algorithms: ["HS256"] }, (err, decoded) => {
                 if (err) {
                     return reject(err);
                 }

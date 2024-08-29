@@ -4,9 +4,10 @@ import { NextFunction, Request, Response } from "express";
 import { validationResult } from "express-validator";
 import { UserService } from "../services/UserService";
 import { CredentialService } from "../services/CredentialService";
-import { JwtPayload } from "jsonwebtoken";
 import { TokenService } from "../services/TokenService";
 import { Roles } from "../constants/constant";
+import { createJwtPayload } from "./createJwtPayload";
+import { JwtPayload } from "../types";
 
 interface AuthRequest extends Request {
     auth?: any;
@@ -80,7 +81,7 @@ export class AuthController {
             let user = await this.userService.loginUser({ email, password });
 
             // Generating Access Token
-            const payload: JwtPayload = { id: user.id, firstName: user.firstName, lastName: user.lastName, email, role: user.role }
+            const payload: JwtPayload = createJwtPayload(user);
             const accessToken = await this.tokenService.generateAccessToken(payload);
 
             // Generating Refresh Token
