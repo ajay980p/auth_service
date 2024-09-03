@@ -3,21 +3,34 @@
         "target": "ES2016",
         "module": "commonjs",
         "outDir": "./dist",
+        "rootDir": "./src",
         "strict": true,
         "strictPropertyInitialization": false,
         "esModuleInterop": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "typeRoots": [
+            "./node_modules/@types",
+            "./types"
+        ],
         "lib": [
             "ES6",
             "DOM"
         ]
     },
     "include": [
-        "src/**/*.ts",
-        "eslint.config.js"
+        "src/**/*.ts"
     ],
     "exclude": [
-        "**/node_modules/drizzle-orm/**/bun-types.d.ts"
+        "node_modules",
+        "dist",
+        "certs",
+        "docker",
+        "drizzle",
+        "logs",
+        "scripts"
     ]
 }
