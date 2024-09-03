@@ -15,11 +15,12 @@ jobs:
         node-version: [20.x]
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
+        cache: 'npm'
     - name: Install dependencies
       run: npm ci
     - name: Check formatting
@@ -28,31 +29,41 @@ jobs:
       run: npm run build
     - name: Generate migrations
       run: npm run migration:generate
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: dist
+        path: dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Use Node.js 20.x
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 20.x
+        cache: 'npm'
     - name: Install dependencies
       run: npm ci
-    - name: Build
-      run: npm run build
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: dist
+        path: dist
     - name: Run migrations
       run: npm run migration:run
       env:
-        # Add any necessary environment variables for database connection
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
     - name: Deploy to production
-      # Add your deployment steps here
       run: |
         echo "Add your deployment commands here"
         # For example:
         # - ssh into your server
         # - pull the latest changes
         # - restart your Node.js application
+      env:
+        # Add any necessary deployment environment variables
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
