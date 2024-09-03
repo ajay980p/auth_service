@@ -8,7 +8,7 @@
         "dev": "cross-env NODE_ENV=dev nodemon --exec ts-node src/server.ts",
         "build": "tsc",
         "migration:generate": "drizzle-kit generate --config=drizzle.config.ts",
-        "migration:run": "node -r esbuild-register ./migrate.ts"
+        "migration:run": "node -r ts-node/register migrate.ts"
     },
     "keywords": [],
     "author": "",
