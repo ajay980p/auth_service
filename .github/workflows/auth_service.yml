@@ -8,61 +8,85 @@ on:
 
 jobs:
   build:
+    name: build-and-test
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [18.x]  # Based on your @types/node version
+        node-version: [18.x]
 
     steps:
     - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+    # - name: Use Node.js ${{ matrix.node-version }}
+    #   uses: actions/setup-node@v4
+    #   with:
+    #     node-version: ${{ matrix.node-version }}
+    #     cache: 'npm'
     - name: Install dependencies
       run: npm ci
+
+    env:
+      PORT: ${{ secrets.PORT }}
+      NODE_ENV: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'production' || 'development' }}
+      DB_HOST: ${{ secrets.DB_HOST }}
+      DB_PORT: ${{ secrets.DB_PORT }}
+      DB_USERNAME: ${{ secrets.DB_USERNAME }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_NAME: ${{ secrets.DB_NAME }}
+      DB_TYPE: ${{ secrets.DB_TYPE }}
+      REFRESH_TOKEN_SECRET_KEY: ${{ secrets.REFRESH_TOKEN_SECRET_KEY }}
+      CORS_ORIGIN: ${{ secrets.CORS_ORIGIN }}
+      JWKS_URI: ${{ secrets.JWKS_URI }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      ACCESS_TOKEN_EXPIRE: ${{ secrets.ACCESS_TOKEN_EXPIRE }}
+      REFRESH_TOKEN_EXPIRE: ${{ secrets.REFRESH_TOKEN_EXPIRE }}
+      SONAR_CLOUD_PASSWORD: ${{ secrets.SONAR_CLOUD_PASSWORD }}
+      DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
     - name: Build
       run: npm run build
+
     - name: Generate migrations
       run: npm run migration:generate
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: dist
         path: dist
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
+
+  # build-and-push-docker:
+  #   needs: Build and Push to Docker Hub
+  #   needs: 
+  #   runs-on: ubuntu-latest
     
-    steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18.x
-        cache: 'npm'
-    - name: Install dependencies
-      run: npm ci
-    - name: Download build artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: dist
-        path: dist
-    - name: Run migrations
-      run: npm run migration:run
-      env:
-        DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        # Add any other necessary environment variables
-    - name: Deploy to production
-      run: |
-        echo "Add your deployment commands here"
-        # For example:
-        # - ssh into your server
-        # - copy the dist folder
-        # - restart your Node.js application
-      env:
-        # Add any necessary deployment environment variables
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+  #   steps:
+  #   - uses: actions/checkout@v4
+  #   - name: Use Node.js 18.x
+  #     uses: actions/setup-node@v4
+  #     with:
+  #       node-version: 18.x
+  #       cache: 'npm'
+  #   - name: Install dependencies
+  #     run: npm ci
+  #   - name: Download build artifacts
+  #     uses: actions/download-artifact@v4
+  #     with:
+  #       name: dist
+  #       path: dist
+  #   - name: Run migrations
+  #     run: npm run migration:run
+  #     env:
+  #       DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  #       # Add any other necessary environment variables
+  #   - name: Deploy to production
+  #     run: |
+  #       echo "Add your deployment commands here"
+  #       # For example:
+  #       # - ssh into your server
+  #       # - copy the dist folder
+  #       # - restart your Node.js application
+  #     env:
+  #       # Add any necessary deployment environment variables
+  #       DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
