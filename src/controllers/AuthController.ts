@@ -121,7 +121,7 @@ export class AuthController {
         this.logger.info("Request to logout a User : ", { id });
 
         try {
-            const isDeleted = await this.userService.logoutUser(id);
+            await this.userService.logoutUser(id);
 
             // Clear the refreshToken and accessToken cookies
             res.clearCookie('refreshToken', { httpOnly: true, secure: true, sameSite: 'strict' });

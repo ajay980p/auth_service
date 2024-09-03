@@ -5,8 +5,7 @@ import { UserController } from '../../controllers/UserController';
 import { CredentialService } from '../../services/CredentialService';
 import { UserService } from '../../services/UserService';
 import { getAllUserDataValidator, updateUserDataValidator } from '../../validators/user-validators';
-import { canAccess } from '../../middlewares/canAccess';
-import { Roles } from '../../constants/constant';
+
 
 const router = express.Router();
 const credentialService = new CredentialService();
