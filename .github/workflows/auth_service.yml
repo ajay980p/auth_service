@@ -15,16 +15,6 @@ jobs:
       matrix:
         node-version: [18.x]
 
-    steps:
-    - uses: actions/checkout@v4
-    # - name: Use Node.js ${{ matrix.node-version }}
-    #   uses: actions/setup-node@v4
-    #   with:
-    #     node-version: ${{ matrix.node-version }}
-    #     cache: 'npm'
-    - name: Install dependencies
-      run: npm ci
-
     env:
       PORT: ${{ secrets.PORT }}
       NODE_ENV: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'production' || 'development' }}
@@ -43,22 +33,27 @@ jobs:
       SONAR_CLOUD_PASSWORD: ${{ secrets.SONAR_CLOUD_PASSWORD }}
       DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm ci
     - name: Build
       run: npm run build
-
     - name: Generate migrations
       run: npm run migration:generate
-
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: dist
         path: dist
 
-
-  # build-and-push-docker:
-  #   needs: Build and Push to Docker Hub
-  #   needs: 
+  # deploy:
+  #   needs: build
   #   runs-on: ubuntu-latest
     
   #   steps:
@@ -79,14 +74,20 @@ jobs:
   #     run: npm run migration:run
   #     env:
   #       DATABASE_URL: ${{ secrets.DATABASE_URL }}
-  #       # Add any other necessary environment variables
+  #   - name: Build and push Docker image
+  #     env:
+  #       DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+  #       DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+  #     run: |
+  #       docker build -t your-dockerhub-username/your-repo-name:${{ github.sha }} .
+  #       echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin
+  #       docker push your-dockerhub-username/your-repo-name:${{ github.sha }}
   #   - name: Deploy to production
   #     run: |
   #       echo "Add your deployment commands here"
   #       # For example:
   #       # - ssh into your server
-  #       # - copy the dist folder
-  #       # - restart your Node.js application
+  #       # - pull the latest Docker image
+  #       # - stop the old container and start a new one
   #     env:
-  #       # Add any necessary deployment environment variables
   #       DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
