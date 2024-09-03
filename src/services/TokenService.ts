@@ -5,7 +5,7 @@ import { errorHandler } from "../validators/err-creators";
 import { Logger } from "winston";
 import { db } from "../config/data-source";
 import { refreshTokens, users } from "../models";
-import { JwtPayload, refreshTokenPayload } from "../types";
+import { JwtPayload, RefreshTokenPayload } from "../types";
 import { eq } from "drizzle-orm";
 import { Config } from "../config";
 import { createJwtPayload } from "../controllers/createJwtPayload";
@@ -39,7 +39,7 @@ export class TokenService {
     }
 
 
-    async persistRefreshToken({ userId, refreshToken }: refreshTokenPayload) {
+    async persistRefreshToken({ userId, refreshToken }: RefreshTokenPayload) {
         const expiresAt = new Date(Date.now() + 1000 * 60 * 60 * 24 * 365);
         const existingRefreshToken = await db.select().from(refreshTokens).where(eq(refreshTokens.userId, userId)).limit(1);
         if (existingRefreshToken.length > 0) {

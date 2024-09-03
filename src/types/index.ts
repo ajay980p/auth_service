@@ -41,7 +41,7 @@ export interface CreateTenantRequest extends Request {
     body: ITenant
 }
 
-export interface refreshTokenPayload {
+export interface RefreshTokenPayload {
     userId: number,
     refreshToken: string
 }
@@ -55,7 +55,7 @@ export interface UserData {
 }
 
 
-export interface updateUserData {
+export interface UpdateUserData {
     userId: number;
     firstName: string;
     lastName: string;

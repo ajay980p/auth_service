@@ -1,5 +1,5 @@
 import { users } from "../models/user/User";
-import { updateUserData, UserData } from "../types";
+import { UpdateUserData, UserData } from "../types";
 import { Logger } from "winston";
 import { errorHandler } from "../validators/err-creators";
 import { db } from "../config/data-source";
@@ -203,7 +203,7 @@ export class UserService {
 
 
     // To Update User Data
-    async updateUserData({ userId, firstName, lastName, email, role }: updateUserData) {
+    async updateUserData({ userId, firstName, lastName, email, role }: UpdateUserData) {
 
         // To check if user exist or not
         const isUserExists = await this.findByUserId(userId);
