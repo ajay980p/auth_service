@@ -11,3 +11,4 @@ temp/
 certs/
 github/
 error.log
+/dist
