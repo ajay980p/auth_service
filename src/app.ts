@@ -7,6 +7,9 @@ import "reflect-metadata";
 // Create Express app
 const app = express();
 
+// Disable 'X-Powered-By' header
+app.disable('x-powered-by');
+
 // Middlewares
 app.use(express.json());
 
