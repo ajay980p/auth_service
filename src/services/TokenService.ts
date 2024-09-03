@@ -68,7 +68,7 @@ export class TokenService {
 
     async handleExpiredToken(accessTokenFromCookie: string, refreshTokenFromCookie: string) {
         const decodedExpiredToken = decode(accessTokenFromCookie) as JwtPayload | null;
-        if (!decodedExpiredToken || !decodedExpiredToken.id) {
+        if (!decodedExpiredToken?.id) {
             this.logger.info("Expired token is invalid or missing ID.");
             throw new Error('Expired token is invalid or missing ID.');
         }
@@ -86,7 +86,7 @@ export class TokenService {
             const payload = createJwtPayload(user);
             const newAccessToken = await this.generateAccessToken(payload);
             const decodedToken = decode(newAccessToken) as JwtPayload;
-            if (!decodedToken || !decodedToken.role) {
+            if (!decodedToken?.role) {
                 throw new Error('New access token is invalid or missing role.');
             }
             return { id: userId, role: decodedToken.role };
@@ -113,7 +113,11 @@ export class TokenService {
         return new Promise((resolve, reject) => {
             verify(token, "ILKQmtYNWqkaMSij0bwKmQwbRzIH6ARrDi8e2Xmkrv4", { algorithms: ["HS256"] }, (err, decoded) => {
                 if (err) {
-                    return reject(err);
+                    // Wrap the error in a new Error object if it's not already one
+                    return reject(err instanceof Error ? err : new Error(err as string));
+                }
+                if (!decoded) {
+                    return reject(new Error('Token verification failed: Decoded payload is null or undefined'));
                 }
                 resolve(decoded);
             });
