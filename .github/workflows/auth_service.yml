@@ -42,10 +42,13 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm ci
+
     - name: Build
       run: npm run build
-    - name: Generate migrations
-      run: npm run migration:generate
+
+    - name: Run migrations
+      run: npm run migration:run
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
