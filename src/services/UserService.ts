@@ -11,14 +11,14 @@ import { formatDateOnly } from "../helpers/utility"
 
 const saltRounds = 10;
 
-interface searchUserData {
+interface SearchUserData {
     currentPage: number,
     pageSize: number,
     search: string,
     searchRole: string
 
 }
-interface modifiedUserData {
+interface ModifiedUserData {
     userId: number | string;
     firstName: string;
     lastName: string;
@@ -124,7 +124,7 @@ export class UserService {
     async deleteUser(userId: number) {
 
         // To check if user exist or not
-        const isUserExists = await this.findByUserId(userId);
+        await this.findByUserId(userId);
 
         try {
             const isDeleted = await db.delete(users).where(eq(users.id, userId)).returning({ id: users.id });
@@ -138,7 +138,7 @@ export class UserService {
 
 
     // To Get All user Data
-    async getAllUserData({ currentPage, pageSize, search, searchRole }: searchUserData) {
+    async getAllUserData({ currentPage, pageSize, search, searchRole }: SearchUserData) {
         try {
             currentPage = currentPage > 0 ? currentPage : 1;
             pageSize = pageSize > 0 ? pageSize : 10;
@@ -183,7 +183,7 @@ export class UserService {
             const totalRecords = totalRecordsResult[0].count;
 
             // Prepare data for logging (mask sensitive info)
-            const usersDataForLog = usersData.map((user: modifiedUserData) => ({
+            const usersDataForLog = usersData.map((user: ModifiedUserData) => ({
                 ...user,
                 password: "****",
                 created_at: user.created_at ? formatDateOnly(user.created_at) : null,
