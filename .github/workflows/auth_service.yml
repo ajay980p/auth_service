@@ -30,8 +30,6 @@ jobs:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       ACCESS_TOKEN_EXPIRE: ${{ secrets.ACCESS_TOKEN_EXPIRE }}
       REFRESH_TOKEN_EXPIRE: ${{ secrets.REFRESH_TOKEN_EXPIRE }}
-      SONAR_CLOUD_PASSWORD: ${{ secrets.SONAR_CLOUD_PASSWORD }}
-      DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
     steps:
     - uses: actions/checkout@v4
@@ -47,62 +45,71 @@ jobs:
     - name: Build
       run: npm run build
 
+    - name: Run tests with coverage
+      run: npm run test:coverage
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: dist
         path: dist
 
-  security-test:
-    name: sonar-cloud-test
+    - name: Upload coverage reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage
+        path: coverage
+
+  sonarcloud:
+    name: SonarCloud Analysis
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Download coverage reports
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage
+          path: coverage
+
       - name: SonarCloud Scan
-        
-      - uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-
-
-  # deploy:
-  #   needs: build
-  #   runs-on: ubuntu-latest
+  deploy:
+    needs: [build, sonarcloud]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     
-  #   steps:
-  #   - uses: actions/checkout@v4
-  #   - name: Use Node.js 18.x
-  #     uses: actions/setup-node@v4
-  #     with:
-  #       node-version: 18.x
-  #       cache: 'npm'
-  #   - name: Install dependencies
-  #     run: npm ci
-  #   - name: Download build artifacts
-  #     uses: actions/download-artifact@v4
-  #     with:
-  #       name: dist
-  #       path: dist
-  #   - name: Run migrations
-  #     run: npm run migration:run
-  #     env:
-  #       DATABASE_URL: ${{ secrets.DATABASE_URL }}
-  #   - name: Build and push Docker image
-  #     env:
-  #       DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-  #       DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
-  #     run: |
-  #       docker build -t your-dockerhub-username/your-repo-name:${{ github.sha }} .
-  #       echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin
-  #       docker push your-dockerhub-username/your-repo-name:${{ github.sha }}
-  #   - name: Deploy to production
-  #     run: |
-  #       echo "Add your deployment commands here"
-  #       # For example:
-  #       # - ssh into your server
-  #       # - pull the latest Docker image
-  #       # - stop the old container and start a new one
-  #     env:
-  #       DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18.x
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm ci
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: dist
+        path: dist
+    - name: Run migrations
+      run: npm run migration:run
+      env:
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    - name: Deploy to production
+      run: |
+        echo "Add your deployment commands here"
+        # For example:
+        # - ssh into your server
+        # - update the application
+        # - restart the service
+      env:
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
