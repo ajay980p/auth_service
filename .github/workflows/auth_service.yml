@@ -78,7 +78,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: ajay980p/auth-service
+      IMAGE_NAME: ajay980p/mernstack_auth_service
       IMAGE_TAG: build-${{ github.run_number }}
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
