@@ -75,7 +75,7 @@ jobs:
 
   build-and-push-to-docker:
     name: Build and push Docker Image
-    needs: build-and-test
+    needs: build
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: ajay980p/auth-service
