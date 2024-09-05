@@ -46,10 +46,10 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 
 const startServer = () => {
     try {
-        app.listen(Config.PORT, async () => {
+        app.listen(4001, async () => {
             await drizzle(connection); // Initialize database connection
             logger.info("Database connected successfully");
-            logger.info(`Server is running on port ${Config.PORT}`);
+            logger.info(`Server is running on port 4001`);
         })
     } catch (err: unknown) {
         if (err instanceof Error) {
