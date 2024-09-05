@@ -28,6 +28,14 @@ app.use(express.json());
 // Define routes
 app.use("/api", Api);
 
+
+app.get("/check", (req: Request, res: Response) => {
+    return res.send({
+        success: true
+    });
+});
+
+
 // Error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     const statusCode = err.statusCode || 500;
