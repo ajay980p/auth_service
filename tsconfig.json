@@ -3,7 +3,7 @@
         "target": "ES2016",
         "module": "commonjs",
         "outDir": "./dist",
-        "rootDir": "./src",
+        "rootDir": "api",
         "strict": true,
         "strictPropertyInitialization": false,
         "esModuleInterop": true,
@@ -22,7 +22,7 @@
         ]
     },
     "include": [
-        "src/**/*.ts",
+        "api/**/*.ts",
         "api/index.ts"
     ],
     "exclude": [

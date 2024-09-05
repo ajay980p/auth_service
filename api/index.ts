@@ -1,11 +1,11 @@
 import express, { Request, Response, NextFunction } from "express";
-import { Config } from "../src/config";
-import logger from "../src/config/logger";
+import { Config } from "./config";
+import logger from "./config/logger";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { connection } from "../src/config/data-source";
+import { connection } from "./config/data-source";
 import { drizzle } from 'drizzle-orm/postgres-js';
-import Api from "../src/routes/api.route";
+import Api from "./routes/api.route";
 
 // Create Express app
 const app = express();
