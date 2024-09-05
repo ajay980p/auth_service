@@ -29,10 +29,8 @@ app.use(express.json());
 app.use("/api", Api);
 
 
-app.get("/", (req: Request, res: Response) => {
-    return res.send({
-        success: true
-    });
+app.get('/', (req, res) => {
+    res.send('Hello World!');
 });
 
 
