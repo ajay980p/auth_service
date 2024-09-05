@@ -2,9 +2,9 @@
     "name": "auth_service",
     "version": "1.0.0",
     "description": "",
-    "main": "dist/server.js",
+    "main": "dist/index.js",
     "scripts": {
-        "start": "ts-node src/server.ts",
+        "start": "ts-node src/index.ts",
         "dev": "cross-env NODE_ENV=dev nodemon --exec ts-node src/server.ts",
         "build": "tsc",
         "migration:generate": "drizzle-kit generate --config=drizzle.config.ts",
