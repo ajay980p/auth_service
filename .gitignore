@@ -13,3 +13,4 @@ github/
 error.log
 /dist
 .netlify
+.vercel
