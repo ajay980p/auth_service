@@ -29,7 +29,7 @@ app.use(express.json());
 app.use("/api", Api);
 
 
-app.get("/check", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
     return res.send({
         success: true
     });
