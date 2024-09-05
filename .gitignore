@@ -12,3 +12,4 @@ certs/
 github/
 error.log
 /dist
+.netlify
