@@ -1473,3 +1473,4 @@
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T18:58:43.249Z"}
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T18:58:44.273Z"}
 {"level":"error","message":"Error: You are not authorized to access this resource","service":"auth_service","timestamp":"2024-08-29T18:58:46.288Z"}
+{"level":"error","message":"Error: Email already exists.","service":"auth_service","timestamp":"2024-09-28T06:32:44.355Z"}

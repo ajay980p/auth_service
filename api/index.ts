@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Define routes
-app.use("/api", Api);
+app.use("/", Api);
 
 
 app.get('/', (req, res) => {
@@ -53,10 +53,10 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 
 const startServer = () => {
     try {
-        app.listen(8080, async () => {
+        app.listen(Config.PORT, async () => {
             await drizzle(connection); // Initialize database connection
             logger.info("Database connected successfully");
-            logger.info(`Server is running on port 8080`);
+            logger.info(`Server is running on port ${Config.PORT}`);
         })
     } catch (err: unknown) {
         if (err instanceof Error) {
